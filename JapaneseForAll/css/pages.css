@@ -1,0 +1,67 @@
+/* PAGE-SPECIFIC: quiz options, flashcard, results, forum chat, quiz editor */
+.mk{width:60px!important;display:inline-block}
+.opt{display:flex;gap:10px;align-items:center;padding:12px 14px;border:1.5px solid var(--line);border-radius:12px;margin:8px 0;cursor:pointer;font-weight:500}
+.opt:hover{border-color:var(--red)}
+.opt.sel{background:var(--soft);border-color:var(--red)}
+.flip{margin:20px auto;min-height:200px;max-width:380px;display:flex;flex-direction:column;justify-content:center;align-items:center;border:2px solid var(--red);border-radius:18px;background:var(--card);cursor:pointer;box-shadow:var(--sh);padding:24px}
+.flip .jp{font-weight:800;font-size:34px}
+.flip.f{background:var(--soft)}
+.big{font-size:44px;font-weight:800;color:var(--red)}
+.medal{font-size:44px}
+.res{text-align:left;margin:14px 0}
+.res>div{padding:8px 12px;border-left:4px solid;border-radius:6px;margin:6px 0;display:flex;flex-direction:column}
+.res .ok{border-color:var(--ok);color:var(--ok)}
+.res .bad{border-color:var(--bad);color:var(--bad)}
+.res span{color:var(--ink)}
+.thread{display:flex;justify-content:space-between;gap:10px;padding:14px;border-bottom:1px solid var(--line);text-decoration:none;color:inherit}
+.thread:hover{background:var(--soft)}
+.thread p{margin:0}
+.pin,.tag{font-size:10px;font-weight:700;background:var(--red);color:#fff;border-radius:6px;padding:1px 6px}
+.chat{display:flex;flex-direction:column;gap:10px;margin:14px 0}
+.msg{background:var(--soft);padding:10px 14px;border-radius:14px 14px 14px 4px;max-width:90%}
+.msg.mine{align-self:flex-end;border-radius:14px 14px 4px 14px;background:color-mix(in srgb,var(--red) 18%,var(--card))}
+.msg p{margin:2px 0 0}
+.orow{display:flex;gap:8px;align-items:center;margin-top:6px}
+.orow input[type=radio]{accent-color:var(--red)}
+.qe{margin:12px 0}
+
+/* ---- CSS-only interactions (no JavaScript) ---- */
+a.fb{text-decoration:none}
+/* quiz option highlights itself when its radio is selected */
+.opt:has(input:checked){background:var(--soft);border-color:var(--red)}
+/* flashcard: click the card (hidden checkbox) to flip it */
+.flip input{display:none}
+.flip .front,.flip .back{display:flex;flex-direction:column;align-items:center;gap:6px}
+.flip .jp{display:block}
+.flip .back{display:none}
+.flip:has(input:checked) .front{display:none}
+.flip:has(input:checked) .back{display:flex}
+.flip:has(input:checked){background:var(--soft)}
+/* register: certificate upload only shows when "Instructor" is chosen */
+.reg .cert{display:none}
+.reg:has(#role-instructor:checked) .cert{display:block}
+.validation-summary {
+    color: #b42318;
+    background-color: #fef3f2;
+    border: 1px solid #fecdca;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 20px;
+}
+
+    .validation-summary ul {
+        margin: 8px 0 0;
+        padding-left: 20px;
+    }
+
+.textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 14px;
+    resize: vertical;
+    box-sizing: border-box;
+}

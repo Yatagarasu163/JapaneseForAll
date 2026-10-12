@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;800&family=Inter:wght@400;500;600&display=swap');
+/* BASE: design tokens (colors), light/dark theme, resets, typography */
+:root{--bg:#faf5ec;--card:#fffdf9;--ink:#221d19;--mut:#80756a;--red:#d8372c;--red2:#a82219;--line:#eadfce;--soft:#fbe3e1;--ok:#2e8b57;--bad:#c0392b;--sh:0 6px 20px #6b4a2a14;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#16120f;--card:#211c17;--ink:#f4ede2;--mut:#a99e90;--line:#3a3129;--soft:#3a1f1d;--sh:0 6px 20px #0006}}
+:root[data-theme=dark]{--bg:#16120f;--card:#211c17;--ink:#f4ede2;--mut:#a99e90;--line:#3a3129;--soft:#3a1f1d;--sh:0 6px 20px #0006}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--bg) radial-gradient(circle at 50% 100%,transparent 58%,color-mix(in srgb,var(--line) 70%,transparent) 60%,transparent 63%) 0 0/64px 32px;color:var(--ink);font:15px/1.5 Inter,system-ui,sans-serif}
+h1,h2,h3,.logo,.big,.jp{font-family:'Shippori Mincho',Georgia,serif}
+h2{margin:.2em 0}
+a{color:var(--red)}
+a.card:hover{transform:translateY(-3px);border-color:var(--red)}

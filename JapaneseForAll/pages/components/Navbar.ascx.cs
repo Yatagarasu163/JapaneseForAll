@@ -11,21 +11,20 @@ namespace JapaneseForAll.pages.components
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (IsPostBack)
+            if (!IsPostBack)
             {
-                return;
+                if (Session["fname"] == null) { Response.Redirect("~/pages/publics/login.aspx"); }
+
+                fname1.Text = Session["fname"].ToString();
+                initial.Text = Session["fname"].ToString().Substring(0, 1).ToUpper();
             }
 
-            if (Session["fname"] == null) { Response.Redirect("~/pages/publics/login.aspx"); }
-
-            fname1.Text = Session["fname"].ToString();
-            initial.Text = Session["fname"].ToString().Substring(0, 1).ToUpper();
         }
 
         protected void LogOut_Click(object sender, EventArgs e)
         {
+            Session.Clear();
             Session.Abandon();
-            Request.Cookies.Clear();
 
             Response.Redirect("~/pages/publics/login.aspx");
 

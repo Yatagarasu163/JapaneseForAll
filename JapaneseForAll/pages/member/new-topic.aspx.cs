@@ -46,9 +46,13 @@ namespace JapaneseForAll.pages.member
                     cmd.Parameters.AddWithValue("@description", msg.Text);
                     cmd.Parameters.AddWithValue("@category", category);
 
+                    con.Open();
                     cmd.ExecuteNonQuery();
+                    con.Close();
                 }
             }
+
+            Response.Redirect("~/pages/member/forum.aspx");
         }
     }
 }

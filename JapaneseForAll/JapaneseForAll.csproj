@@ -127,12 +127,16 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="js\register.js" />
+    <Content Include="pages\components\InstructorNavbar.ascx" />
     <Content Include="pages\components\Navbar.ascx" />
+    <Content Include="pages\instructor\content.aspx" />
     <Content Include="pages\member\dashboard.aspx" />
     <Content Include="pages\member\flashcards.aspx" />
     <Content Include="pages\member\forum.aspx" />
     <Content Include="pages\member\new-topic.aspx" />
+    <Content Include="pages\member\profile.aspx" />
     <Content Include="pages\member\quizzes.aspx" />
+    <Content Include="pages\member\thread.aspx" />
     <Content Include="pages\publics\register.aspx" />
     <Content Include="pages\publics\quizzes.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -204,12 +208,26 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="pages\components\InstructorNavbar.ascx.cs">
+      <DependentUpon>InstructorNavbar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\components\InstructorNavbar.ascx.designer.cs">
+      <DependentUpon>InstructorNavbar.ascx</DependentUpon>
+    </Compile>
     <Compile Include="pages\components\Navbar.ascx.cs">
       <DependentUpon>Navbar.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="pages\components\Navbar.ascx.designer.cs">
       <DependentUpon>Navbar.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\instructor\content.aspx.cs">
+      <DependentUpon>content.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\instructor\content.aspx.designer.cs">
+      <DependentUpon>content.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\member\dashboard.aspx.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>
@@ -239,12 +257,26 @@
     <Compile Include="pages\member\new-topic.aspx.designer.cs">
       <DependentUpon>new-topic.aspx</DependentUpon>
     </Compile>
+    <Compile Include="pages\member\profile.aspx.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\member\profile.aspx.designer.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+    </Compile>
     <Compile Include="pages\member\quizzes.aspx.cs">
       <DependentUpon>quizzes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="pages\member\quizzes.aspx.designer.cs">
       <DependentUpon>quizzes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\member\thread.aspx.cs">
+      <DependentUpon>thread.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\member\thread.aspx.designer.cs">
+      <DependentUpon>thread.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\publics\register.aspx.cs">
       <DependentUpon>register.aspx</DependentUpon>
@@ -299,7 +331,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="pages\admin\" />
-    <Folder Include="pages\instructor\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

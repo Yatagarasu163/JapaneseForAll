@@ -11,6 +11,10 @@ namespace JapaneseForAll.pages.member
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                fname2.Text = Session["fname"].ToString().Trim();
+            }
         }
     }
 }

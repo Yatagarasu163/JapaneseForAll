@@ -78,16 +78,21 @@
                         </div>
 
                         <div class="cert">
-                            <label>Teaching Certificate (Instructors only)<asp:FileUpload runat="server" ID="cert" accept=".pdf" Enabled="false" ClientIDMode="Static"/></label>
+                            <label>Teaching Certificate (Instructors only)<asp:FileUpload runat="server" ID="cert" Enabled="false" accept=".pdf" ClientIDMode="Static"/></label>
                             <small class="mut">⬆ Upload PDF (max 5MB)</small>
                             <asp:CustomValidator ID="certValidator" runat="server" ErrorMessage="Instructors must submit a teaching certificate." Text="*" ForeColor="Red" ValidationGroup="Register" OnServerValidate="certValidator_ServerValidate" />
                         </div>
-
                         <div class="row"><asp:Button ID="btnRegister" runat="server" Text="Create Account" CssClass="btn" Style="width:100%" ValidationGroup="Register" OnClick="btnRegister_Click"/></div>
                 </form>
             <p class="c mut">Already have an account? <a href="login.aspx">Log in</a></p>
         </div>
     </main>
-    <script src='<%= ResolveClientUrl("~/js/register.js") %>' type="text/javascript"></script>
+    <script>
+const roleMemberId = '<%= roleMember.ClientID %>';
+const roleInstructorId = '<%= roleInstructor.ClientID %>';
+const certificateId = '<%= cert.ClientID %>';
+    </script>
+    <script src="../../js/register.js"></script>
 </body>
 </html>
+

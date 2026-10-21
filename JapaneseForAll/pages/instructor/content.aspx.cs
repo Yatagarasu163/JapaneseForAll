@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Data;
+using Microsoft.Ajax.Utilities;
 
 namespace JapaneseForAll.pages.instructor
 {
@@ -31,23 +32,16 @@ namespace JapaneseForAll.pages.instructor
             {
                 using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["JPDB"].ConnectionString))
                 {
-                    string query = @"
-                        SELECT
-                            Q.QUIZ_ID AS ModuleId,
-                            Q.TITLE AS Title,
-                            CASE
-                                WHEN EXISTS (
-                                    SELECT 1
-                                    FROM FLASHCARDTABLE F
-                                    WHERE F.QUIZ_ID = Q.QUIZ_ID
-                                )
-                                THEN 'Flashcards'
-                                ELSE 'Quiz'
-                            END AS Type,
-                            Q.LEVEL AS Level,
-                            Q.STATUS AS Status
-                        FROM QUIZTABLE Q
-                        ORDER BY Q.TITLE;";
+
+                string query = @"
+                                SELECT
+                                    Q.QUIZ_ID AS ModuleId,
+                                    Q.TITLE AS Title,
+                                    'Quiz' AS Type,
+                                    Q.LEVEL AS Level,
+                                    Q.STATUS AS Status
+                                FROM QUIZTABLE Q
+                                ORDER BY Q.TITLE;";
 
                     using (SqlCommand cmd = new SqlCommand(query, con))
                     {
@@ -75,6 +69,39 @@ namespace JapaneseForAll.pages.instructor
                         moduleRepeater.DataSource = modules;
                         moduleRepeater.DataBind();
                     }
+                }
+            }
+        }
+        
+        protected void DeleteModule_Command(object sender, CommandEventArgs e)
+        {
+            int moduleId = Convert.ToInt32(e.CommandArgument);
+
+            using(SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["JPDB"].ConnectionString))
+            {
+                string query = "UPDATE QUIZTABLE SET STATUS = 'DELETED' WHERE QUIZ_ID = @moduleId";
+
+                con.Open();
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@moduleId", moduleId);
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    if(rowsAffected > 0)
+                    {
+
+                    }
+                }
+
+                query = "UPDATE FLASHCARDTABLE SET STATUS = 'DELETED' WHERE QUIZ_ID = @moduleId";
+
+                using(SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@moduleId", moduleId);
+
+                    cmd.ExecuteNonQuery();
                 }
             }
         }

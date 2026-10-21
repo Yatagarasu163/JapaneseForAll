@@ -56,7 +56,7 @@ namespace JapaneseForAll
                             Response.Redirect("../member/dashboard.aspx");
                         } else if (role == "Instructor")
                         {
-                            Response.Redirect("../instructor/dashboard.aspx");
+                            Response.Redirect("../instructor/content.aspx");
                         } else if (role == "Admin")
                         {
                             Response.Redirect("../admin/dashboard.aspx");

@@ -63,21 +63,23 @@ namespace JapaneseForAll.pages.publics
                             //Create a row for a member 
                             string query1 = "INSERT INTO USERTABLE (FNAME, MNAME, LNAME, USERNAME, EMAIL, PASSWORD, GENDER, ROLE) VALUES (@fname, @mname, @lname, @username, @email, @password, @gender, @role) ";
 
-                            SqlCommand cmd1 = new SqlCommand(query1, con);
-                            cmd1.Parameters.AddWithValue("@fname", fname.Text);
-                            cmd1.Parameters.AddWithValue("@mname", mname.Text);
-                            cmd1.Parameters.AddWithValue("@lname", lname.Text);
-                            cmd1.Parameters.AddWithValue("@username", username.Text);
-                            cmd1.Parameters.AddWithValue("@email", email.Text);
-                            cmd1.Parameters.AddWithValue("@password", password.Text);
-                            cmd1.Parameters.AddWithValue("@gender", gender);
-                            cmd1.Parameters.AddWithValue("@role", "Member");
-                            cmd1.ExecuteNonQuery();
+                            SqlCommand cmd2 = new SqlCommand(query1, con);
+                            cmd2.Parameters.AddWithValue("@fname", fname.Text);
+                            cmd2.Parameters.AddWithValue("@mname", string.IsNullOrWhiteSpace(mname.Text) ? (object)DBNull.Value: mname.Text.Trim());
+                            cmd2.Parameters.AddWithValue("@lname", lname.Text);
+                            cmd2.Parameters.AddWithValue("@username", username.Text);
+                            cmd2.Parameters.AddWithValue("@email", email.Text);
+                            cmd2.Parameters.AddWithValue("@password", password.Text);
+                            cmd2.Parameters.AddWithValue("@gender", gender);
+                            cmd2.Parameters.AddWithValue("@role", "Member");
+                            cmd2.ExecuteNonQuery();
                             Response.Redirect("login.aspx");
                         }
                         else
                         {
                             string folderPath = Server.MapPath("~/Certificates/");
+
+                            System.Diagnostics.Debug.WriteLine("Certificate folder: " + folderPath);
 
                             if (!Directory.Exists(folderPath))
                             {
@@ -86,24 +88,38 @@ namespace JapaneseForAll.pages.publics
 
                             string certPath = "";
 
-                            if (this.cert.HasFile)
+                            if (cert.HasFile)
                             {
-                                certPath = "~/Certificates/" + this.cert.FileName.ToString();
-                                cert.SaveAs(folderPath + Path.GetFileName(cert.FileName));
+                                string fileName = Path.GetFileName(cert.FileName);
+                                string fullPath = Path.Combine(folderPath, fileName);
+
+                                System.Diagnostics.Debug.WriteLine("Uploaded filename: " + fileName);
+                                System.Diagnostics.Debug.WriteLine("Full save path: " + fullPath);
+
+                                cert.SaveAs(fullPath);
+
+                                certPath = "~/Certificates/" + fileName;
+
+                                //certPath = "~/Certificates/" + cert.FileName.ToString();
+                                //cert.SaveAs(folderPath + Path.GetFileName(cert.FileName));
+                            }
+                            else
+                            {
+                                System.Diagnostics.Debug.WriteLine("No certificate file was uploaded.");
                             }
                             
 
                             //Create a row for an instructor
-                            string query1 = "INSERT INTO USERTABLE(FNAME, MNAME, LNAME, USERNAME, EMAIL, PASSWORD, GENDER, ROLE, CERT, STATUS) VALUES (@fname, @mname, @lname, @username, @email, @password, @gender, @role, @cert, 'PENDING') ";
+                            string query1 = "INSERT INTO USERTABLE(FNAME, MNAME, LNAME, USERNAME, EMAIL, PASSWORD, GENDER, ROLE, CERTIFICATE, STATUS) VALUES (@fname, @mname, @lname, @username, @email, @password, @gender, @role, @cert, 'PENDING') ";
                             SqlCommand cmd1 = new SqlCommand(query1, con);
                             cmd1.Parameters.AddWithValue("@fname", fname.Text);
-                            cmd1.Parameters.AddWithValue("@mname", mname.Text);
+                            cmd1.Parameters.AddWithValue("@mname", string.IsNullOrWhiteSpace(mname.Text) ? (object)DBNull.Value: mname.Text.Trim());
                             cmd1.Parameters.AddWithValue("@lname", lname.Text);
                             cmd1.Parameters.AddWithValue("@username", username.Text);
                             cmd1.Parameters.AddWithValue("@email", email.Text);
                             cmd1.Parameters.AddWithValue("@password", password.Text);
                             cmd1.Parameters.AddWithValue("@gender", gender);
-                            cmd1.Parameters.AddWithValue("@role", "Member");
+                            cmd1.Parameters.AddWithValue("@role", "Instructor");
                             cmd1.Parameters.AddWithValue("@cert", certPath);
                             cmd1.ExecuteNonQuery();
                             Response.Redirect("login.aspx");
@@ -112,6 +128,8 @@ namespace JapaneseForAll.pages.publics
                     }
                 } catch(Exception ex)
                 {
+                    System.Diagnostics.Debug.WriteLine(ex.ToString());
+
                     errMsg.Visible = true;
                     errMsg.ForeColor = System.Drawing.Color.Red;
                     errMsg.Text = "Registration not successful!" + ex.ToString();

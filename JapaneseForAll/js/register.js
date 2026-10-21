@@ -1,9 +1,5 @@
 ﻿function toggleCertificate() {
-    const instructor = document.getElementById("roleInstructor");
-    const certificate = document.getElementById("cert");
-    const certSection = document.querySelector(".cert");
-
-    if (!instructor || !certificate || !certSection) {
+    if (!instructor || !certificate || !certSection || !member) {
         console.error("Certificate controls could not be found.");
         return;
     }
@@ -15,9 +11,21 @@
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("roleMember").addEventListener("change", toggleCertificate);
+    const member = document.getElementById(roleMemberId);
+    const instructor = document.getElementById(roleInstructorId);
 
-    document.getElementById("roleInstructor").addEventListener("change", toggleCertificate);
-
-    toggleCertificate();
+    if (member && instructor) {
+        member.addEventListener("change", toggleCertificate);
+        instructor.addEventListener("change", toggleCertficate);
+        toggleCertificate();
+    }
 })
+document.addEventListener("DOMContentLoaded", function () {
+    const certificate = document.getElementById("cert");
+
+    if (certificate) {
+        certificate.addEventListener("change", function () {
+            console.log("File selected:", certificate.files[0]?.name);
+        });
+    }
+});

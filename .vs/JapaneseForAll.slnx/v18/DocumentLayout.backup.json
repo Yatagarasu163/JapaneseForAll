@@ -3,20 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\NrAdI\\source\\repos\\JapaneseForAll\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|c:\\users\\nradi\\source\\repos\\japaneseforall\\japaneseforall\\pages\\member\\quizzes.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|solutionrelative:japaneseforall\\pages\\member\\quizzes.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|c:\\users\\nradi\\source\\repos\\japaneseforall\\japaneseforall\\pages\\member\\quizzes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|solutionrelative:japaneseforall\\pages\\member\\quizzes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|c:\\users\\nradi\\source\\repos\\japaneseforall\\japaneseforall\\pages\\publics\\login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|solutionrelative:japaneseforall\\pages\\publics\\login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|c:\\users\\nradi\\source\\repos\\japaneseforall\\japaneseforall\\pages\\publics\\quizzes.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|solutionrelative:japaneseforall\\pages\\publics\\quizzes.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|C:\\Users\\NrAdI\\source\\repos\\JapaneseForAll\\japaneseforall\\pages\\instructor\\content.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|solutionrelative:japaneseforall\\pages\\instructor\\content.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -25,38 +17,16 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "DockedWidth": 249,
+          "SelectedChildIndex": 5,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "login.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\NrAdI\\source\\repos\\JapaneseForAll\\JapaneseForAll\\pages\\publics\\login.aspx.cs",
-              "RelativeDocumentMoniker": "JapaneseForAll\\pages\\publics\\login.aspx.cs",
-              "ToolTip": "C:\\Users\\NrAdI\\source\\repos\\JapaneseForAll\\JapaneseForAll\\pages\\publics\\login.aspx.cs",
-              "RelativeToolTip": "JapaneseForAll\\pages\\publics\\login.aspx.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAowDMAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-11T17:28:00.175Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "quizzes.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\NrAdI\\source\\repos\\JapaneseForAll\\JapaneseForAll\\pages\\member\\quizzes.aspx.cs",
-              "RelativeDocumentMoniker": "JapaneseForAll\\pages\\member\\quizzes.aspx.cs",
-              "ToolTip": "C:\\Users\\NrAdI\\source\\repos\\JapaneseForAll\\JapaneseForAll\\pages\\member\\quizzes.aspx.cs",
-              "RelativeToolTip": "JapaneseForAll\\pages\\member\\quizzes.aspx.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAqwBsAAABEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-11T17:16:32.478Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{c6f34f0d-7ae5-4f3a-be61-fe0c21ae9eb8}"
             },
             {
               "$type": "Bookmark",
@@ -65,45 +35,38 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{74946827-37a0-11d2-a273-00c04f8ef4ff}"
-            }
-          ]
-        },
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 1,
-          "Children": [
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "quizzes.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\NrAdI\\source\\repos\\JapaneseForAll\\JapaneseForAll\\pages\\publics\\quizzes.aspx.cs",
-              "RelativeDocumentMoniker": "JapaneseForAll\\pages\\publics\\quizzes.aspx.cs",
-              "ToolTip": "C:\\Users\\NrAdI\\source\\repos\\JapaneseForAll\\JapaneseForAll\\pages\\publics\\quizzes.aspx.cs",
-              "RelativeToolTip": "JapaneseForAll\\pages\\publics\\quizzes.aspx.cs",
-              "ViewState": "AgIAAFMAAAAAAAAAAAAYwFwAAAAyAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "login.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\NrAdI\\source\\repos\\JapaneseForAll\\JapaneseForAll\\pages\\publics\\login.aspx.cs",
+              "RelativeDocumentMoniker": "JapaneseForAll\\pages\\publics\\login.aspx.cs",
+              "ToolTip": "C:\\Users\\NrAdI\\source\\repos\\JapaneseForAll\\JapaneseForAll\\pages\\publics\\login.aspx.cs",
+              "RelativeToolTip": "JapaneseForAll\\pages\\publics\\login.aspx.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAowDoAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-11T17:16:43.32Z",
+              "WhenOpened": "2026-10-21T09:54:30.529Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "quizzes.aspx",
-              "DocumentMoniker": "C:\\Users\\NrAdI\\source\\repos\\JapaneseForAll\\JapaneseForAll\\pages\\member\\quizzes.aspx",
-              "RelativeDocumentMoniker": "JapaneseForAll\\pages\\member\\quizzes.aspx",
-              "ToolTip": "C:\\Users\\NrAdI\\source\\repos\\JapaneseForAll\\JapaneseForAll\\pages\\member\\quizzes.aspx",
-              "RelativeToolTip": "JapaneseForAll\\pages\\member\\quizzes.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2026-10-11T17:15:05.192Z",
+              "Title": "content.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\NrAdI\\source\\repos\\JapaneseForAll\\JapaneseForAll\\pages\\instructor\\content.aspx.cs",
+              "RelativeDocumentMoniker": "JapaneseForAll\\pages\\instructor\\content.aspx.cs",
+              "ToolTip": "C:\\Users\\NrAdI\\source\\repos\\JapaneseForAll\\JapaneseForAll\\pages\\instructor\\content.aspx.cs",
+              "RelativeToolTip": "JapaneseForAll\\pages\\instructor\\content.aspx.cs",
+              "ViewState": "AgIAAE8AAAAAAAAAAAAmwF0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-13T06:45:02.46Z",
               "EditorCaption": ""
             }
           ]
-        },
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": -1,
-          "Children": []
         }
       ]
     }

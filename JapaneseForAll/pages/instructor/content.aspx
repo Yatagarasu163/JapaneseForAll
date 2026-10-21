@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="content.aspx.cs" Inherits="JapaneseForAll.pages.instructor.content" %>
-<%@ Register Src="~/pages/components/InstructorNavbar.ascx" TagPrefix="uc" TagName="Navbar" %>
+<%@ Register Src="~/pages/components/InstructorNavbar.ascx" TagPrefix="uc" TagName="InstructorNavbar" %>
 
 <!DOCTYPE html>
 

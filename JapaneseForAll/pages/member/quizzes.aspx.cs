@@ -27,25 +27,27 @@ namespace JapaneseForAll.pages.member
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            quizzes = new List<Quiz>();
-
-            try
+            if (Session["fname"] == null) { Response.Redirect("~/pages/publics/login.aspx"); }
+            if (!IsPostBack)
             {
-                string level = Request.QueryString["level"];
+                quizzes = new List<Quiz>();
 
-                if(!string.IsNullOrEmpty(level) && !validLevels.Contains(level))
+                try
                 {
-                    errMsg.Visible = true;
-                    errMsg.ForeColor = System.Drawing.Color.Red;
-                    errMsg.Text = "That is not a valid level!";
-                    return;
-                }
+                    string level = Request.QueryString["level"];
 
-                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["JPDB"].ConnectionString);
-                con.Open();
+                    if (!string.IsNullOrEmpty(level) && !validLevels.Contains(level))
+                    {
+                        errMsg.Visible = true;
+                        errMsg.ForeColor = System.Drawing.Color.Red;
+                        errMsg.Text = "That is not a valid level!";
+                        return;
+                    }
 
-                string query = @"
+                    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["JPDB"].ConnectionString);
+                    con.Open();
+
+                    string query = @"
                     SELECT
                         q.QUIZ_ID,
                         q.TITLE,
@@ -54,55 +56,56 @@ namespace JapaneseForAll.pages.member
                     FROM QUIZTABLE q
                     WHERE q.STATUS = 'PUBLISHED'";
 
-                if (!string.IsNullOrEmpty(level))
-                {
-                    query += " AND LEVEL = @LEVEL";
-                }
-
-                SqlCommand cmd = new SqlCommand(query, con);
-
-                if (!string.IsNullOrEmpty(level))
-                {
-                    query += " AND q.LEVEL = @LEVEL";
-                }
-
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-
-                foreach (DataRow quiz in dt.Rows)
-                {
-                    quizzes.Add(new Quiz
+                    if (!string.IsNullOrEmpty(level))
                     {
-                        QuizId = Convert.ToInt32(quiz["QUIZ_ID"]),
-                        Title = quiz["TITLE"].ToString(),
-                        Level = quiz["LEVEL"].ToString(),
-                        QuestionCount = Convert.ToInt32(quiz["QUESTION_COUNT"])
-                    });
+                        query += " AND LEVEL = @LEVEL";
+                    }
+
+                    SqlCommand cmd = new SqlCommand(query, con);
+
+                    if (!string.IsNullOrEmpty(level))
+                    {
+                        query += " AND q.LEVEL = @LEVEL";
+                    }
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+
+                    foreach (DataRow quiz in dt.Rows)
+                    {
+                        quizzes.Add(new Quiz
+                        {
+                            QuizId = Convert.ToInt32(quiz["QUIZ_ID"]),
+                            Title = quiz["TITLE"].ToString(),
+                            Level = quiz["LEVEL"].ToString(),
+                            QuestionCount = Convert.ToInt32(quiz["QUESTION_COUNT"])
+                        });
+                    }
+
+                    quizRepeater.DataSource = quizzes;
+                    quizRepeater.DataBind();
+
+                    con.Close();
+
+                    if (quizzes.Count < 1)
+                    {
+                        errMsg.Visible = true;
+                        errMsg.ForeColor = System.Drawing.Color.Red;
+                        errMsg.Text = "There are no quizzes at the moment! Come back later.";
+                    }
+
                 }
-
-                quizRepeater.DataSource = quizzes;
-                quizRepeater.DataBind();
-
-                con.Close();
-
-                if(quizzes.Count < 1)
+                catch (Exception ex)
                 {
                     errMsg.Visible = true;
                     errMsg.ForeColor = System.Drawing.Color.Red;
-                    errMsg.Text = "There are no quizzes at the moment! Come back later.";
+                    errMsg.Text = "Database error: " + ex.Message;
+
+                    System.Diagnostics.Trace.TraceError(ex.ToString());
                 }
-
-            } catch(Exception ex)
-            {
-                errMsg.Visible = true;
-                errMsg.ForeColor = System.Drawing.Color.Red;
-                errMsg.Text = "Database error: " + ex.Message;
-
-                System.Diagnostics.Trace.TraceError(ex.ToString());
             }
-
         }
 
         protected void searchButton_Click(object sender, EventArgs e)

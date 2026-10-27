@@ -3,30 +3,37 @@
   "WorkspaceRootPath": "D:\\JapForAll\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|d:\\japforall\\japaneseforall\\pages\\member\\webform3.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|solutionrelative:japaneseforall\\pages\\member\\webform3.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|D:\\JapForAll\\japaneseforall\\pages\\admin\\management.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|solutionrelative:japaneseforall\\pages\\admin\\management.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\hewle\\OneDrive\\DA sem 2\\Web Application\\pages-css-additions.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|d:\\japforall\\japaneseforall\\pages\\instructor\\quiz-editor.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|solutionrelative:japaneseforall\\pages\\instructor\\quiz-editor.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|d:\\japforall\\japaneseforall\\pages\\instructor\\quiz-editor.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|solutionrelative:japaneseforall\\pages\\instructor\\quiz-editor.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|d:\\japforall\\japaneseforall\\pages\\admin\\verification.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|solutionrelative:japaneseforall\\pages\\admin\\verification.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|d:\\japforall\\japaneseforall\\pages\\admin\\verification.aspx.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|D:\\JapForAll\\japaneseforall\\pages\\admin\\verification.aspx.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|solutionrelative:japaneseforall\\pages\\admin\\verification.aspx.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/D__JAPFORALL_JAPANESEFORALL_APP_DATA_DATABASE1.MDF/True/SqlTable/dbo.USERTABLE.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|d:\\japforall\\japaneseforall\\pages\\admin\\management.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|solutionrelative:japaneseforall\\pages\\admin\\management.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|d:\\japforall\\japaneseforall\\pages\\admin\\verification.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|D:\\JapForAll\\japaneseforall\\pages\\admin\\verification.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|solutionrelative:japaneseforall\\pages\\admin\\verification.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|d:\\japforall\\japaneseforall\\pages\\admin\\edituser.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|D:\\JapForAll\\japaneseforall\\pages\\admin\\edituser.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|solutionrelative:japaneseforall\\pages\\admin\\edituser.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     }
   ],
@@ -37,7 +44,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 249,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -56,31 +63,58 @@
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:175539669:0:{83107a3e-496a-485e-b455-16ddb978e55e}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "WebForm3.aspx",
-              "DocumentMoniker": "D:\\JapForAll\\JapaneseForAll\\pages\\member\\WebForm3.aspx",
-              "RelativeDocumentMoniker": "JapaneseForAll\\pages\\member\\WebForm3.aspx",
-              "ToolTip": "D:\\JapForAll\\JapaneseForAll\\pages\\member\\WebForm3.aspx",
-              "RelativeToolTip": "JapaneseForAll\\pages\\member\\WebForm3.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2026-10-26T10:53:08.294Z",
+              "DocumentIndex": 1,
+              "Title": "pages-css-additions.css",
+              "DocumentMoniker": "C:\\Users\\hewle\\OneDrive\\DA sem 2\\Web Application\\pages-css-additions.css",
+              "ToolTip": "C:\\Users\\hewle\\OneDrive\\DA sem 2\\Web Application\\pages-css-additions.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-10-27T07:13:57.1Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "quiz-editor.aspx.cs",
+              "DocumentMoniker": "D:\\JapForAll\\JapaneseForAll\\pages\\instructor\\quiz-editor.aspx.cs",
+              "RelativeDocumentMoniker": "JapaneseForAll\\pages\\instructor\\quiz-editor.aspx.cs",
+              "ToolTip": "D:\\JapForAll\\JapaneseForAll\\pages\\instructor\\quiz-editor.aspx.cs",
+              "RelativeToolTip": "JapaneseForAll\\pages\\instructor\\quiz-editor.aspx.cs",
+              "ViewState": "AgIAAEoBAAAAAAAAAAAmwHgBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-27T06:52:45.297Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "dbo.USERTABLE [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/D__JAPFORALL_JAPANESEFORALL_APP_DATA_DATABASE1.MDF/True/SqlTable/dbo.USERTABLE.sql",
-              "ToolTip": "dbo.USERTABLE [Data]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2026-10-26T10:24:50.761Z",
+              "Title": "quiz-editor.aspx",
+              "DocumentMoniker": "D:\\JapForAll\\JapaneseForAll\\pages\\instructor\\quiz-editor.aspx",
+              "RelativeDocumentMoniker": "JapaneseForAll\\pages\\instructor\\quiz-editor.aspx",
+              "ToolTip": "D:\\JapForAll\\JapaneseForAll\\pages\\instructor\\quiz-editor.aspx",
+              "RelativeToolTip": "JapaneseForAll\\pages\\instructor\\quiz-editor.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-10-27T06:53:00.59Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "dbo.USERTABLE.sql",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/D__JAPFORALL_JAPANESEFORALL_APP_DATA_DATABASE1.MDF/True/SqlTable/dbo.USERTABLE.sql",
+              "ToolTip": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/D__JAPFORALL_JAPANESEFORALL_APP_DATA_DATABASE1.MDF/True/SqlTable/dbo.USERTABLE.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2026-10-26T10:24:50.761Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "EditUser.aspx",
               "DocumentMoniker": "D:\\JapForAll\\JapaneseForAll\\pages\\admin\\EditUser.aspx",
               "RelativeDocumentMoniker": "JapaneseForAll\\pages\\admin\\EditUser.aspx",
@@ -88,12 +122,11 @@
               "RelativeToolTip": "JapaneseForAll\\pages\\admin\\EditUser.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2026-10-26T07:37:33.39Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-26T07:37:33.39Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "management.aspx",
               "DocumentMoniker": "D:\\JapForAll\\JapaneseForAll\\pages\\admin\\management.aspx",
               "RelativeDocumentMoniker": "JapaneseForAll\\pages\\admin\\management.aspx",
@@ -106,7 +139,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "verification.aspx.designer.cs",
               "DocumentMoniker": "D:\\JapForAll\\JapaneseForAll\\pages\\admin\\verification.aspx.designer.cs",
               "RelativeDocumentMoniker": "JapaneseForAll\\pages\\admin\\verification.aspx.designer.cs",
@@ -114,25 +147,24 @@
               "RelativeToolTip": "JapaneseForAll\\pages\\admin\\verification.aspx.designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAD4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-26T07:37:44.805Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-26T07:37:44.805Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "verification.aspx.cs",
               "DocumentMoniker": "D:\\JapForAll\\JapaneseForAll\\pages\\admin\\verification.aspx.cs",
               "RelativeDocumentMoniker": "JapaneseForAll\\pages\\admin\\verification.aspx.cs",
               "ToolTip": "D:\\JapForAll\\JapaneseForAll\\pages\\admin\\verification.aspx.cs",
               "RelativeToolTip": "JapaneseForAll\\pages\\admin\\verification.aspx.cs",
-              "ViewState": "AgIAADgAAAAAAAAAAAAgwBcAAABGAAAAAAAAAA==",
+              "ViewState": "AgIAADgAAAAAAAAAAAAgwEAAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-26T07:37:43.017Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "verification.aspx",
               "DocumentMoniker": "D:\\JapForAll\\JapaneseForAll\\pages\\admin\\verification.aspx",
               "RelativeDocumentMoniker": "JapaneseForAll\\pages\\admin\\verification.aspx",
@@ -140,12 +172,7 @@
               "RelativeToolTip": "JapaneseForAll\\pages\\admin\\verification.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2026-10-26T07:33:32.47Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:175539669:0:{83107a3e-496a-485e-b455-16ddb978e55e}"
+              "WhenOpened": "2026-10-26T07:33:32.47Z"
             }
           ]
         }

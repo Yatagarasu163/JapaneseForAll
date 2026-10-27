@@ -1,0 +1,420 @@
+[1mdiff --cc .vs/JapaneseForAll.slnx/v18/.suo[m
+[1mindex b09e7c3,44c1676..0000000[m
+Binary files differ
+[1mdiff --cc .vs/JapaneseForAll.slnx/v18/DocumentLayout.backup.json[m
+[1mindex 8ad8fa0,975a3a8..0000000[m
+[1m--- a/.vs/JapaneseForAll.slnx/v18/DocumentLayout.backup.json[m
+[1m+++ b/.vs/JapaneseForAll.slnx/v18/DocumentLayout.backup.json[m
+[36m@@@ -1,33 -1,14 +1,42 @@@[m
+  {[m
+    "Version": 1,[m
+[31m -  "WorkspaceRootPath": "C:\\Users\\NrAdI\\source\\repos\\JapaneseForAll\\",[m
+[32m +  "WorkspaceRootPath": "D:\\JapForAll\\",[m
+    "Documents": [[m
+      {[m
+[32m++<<<<<<< HEAD[m
+[32m +      "AbsoluteMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|d:\\japforall\\japaneseforall\\pages\\member\\webform3.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",[m
+[32m +      "RelativeMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|solutionrelative:japaneseforall\\pages\\member\\webform3.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"[m
+[32m +    },[m
+[32m +    {[m
+[32m +      "AbsoluteMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|d:\\japforall\\japaneseforall\\pages\\admin\\verification.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",[m
+[32m +      "RelativeMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|solutionrelative:japaneseforall\\pages\\admin\\verification.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"[m
+[32m +    },[m
+[32m +    {[m
+[32m +      "AbsoluteMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|d:\\japforall\\japaneseforall\\pages\\admin\\verification.aspx.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",[m
+[32m +      "RelativeMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|solutionrelative:japaneseforall\\pages\\admin\\verification.aspx.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"[m
+[32m +    },[m
+[32m +    {[m
+[32m +      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/D__JAPFORALL_JAPANESEFORALL_APP_DATA_DATABASE1.MDF/True/SqlTable/dbo.USERTABLE.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"[m
+[32m +    },[m
+[32m +    {[m
+[32m +      "AbsoluteMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|d:\\japforall\\japaneseforall\\pages\\admin\\management.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",[m
+[32m +      "RelativeMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|solutionrelative:japaneseforall\\pages\\admin\\management.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"[m
+[32m +    },[m
+[32m +    {[m
+[32m +      "AbsoluteMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|d:\\japforall\\japaneseforall\\pages\\admin\\verification.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",[m
+[32m +      "RelativeMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|solutionrelative:japaneseforall\\pages\\admin\\verification.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"[m
+[32m +    },[m
+[32m +    {[m
+[32m +      "AbsoluteMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|d:\\japforall\\japaneseforall\\pages\\admin\\edituser.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",[m
+[32m +      "RelativeMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|solutionrelative:japaneseforall\\pages\\admin\\edituser.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"[m
+[32m++=======[m
+[32m+       "AbsoluteMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|c:\\users\\nradi\\source\\repos\\japaneseforall\\japaneseforall\\pages\\member\\flashcard-list.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",[m
+[32m+       "RelativeMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|solutionrelative:japaneseforall\\pages\\member\\flashcard-list.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"[m
+[32m+     },[m
+[32m+     {[m
+[32m+       "AbsoluteMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|c:\\users\\nradi\\source\\repos\\japaneseforall\\japaneseforall\\pages\\member\\quizzes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",[m
+[32m+       "RelativeMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|solutionrelative:japaneseforall\\pages\\member\\quizzes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"[m
+[32m++>>>>>>> a53f5c9215698edb35d24e308ded88aa11184763[m
+      }[m
+    ],[m
+    "DocumentGroupContainers": [[m
+[36m@@@ -37,115 -18,33 +46,142 @@@[m
+        "DocumentGroups": [[m
+          {[m
+            "DockedWidth": 249,[m
+[32m++<<<<<<< HEAD[m
+[32m +          "SelectedChildIndex": 4,[m
+[32m +          "Children": [[m
+[32m +            {[m
+[32m +              "$type": "Bookmark",[m
+[32m +              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"[m
+[32m +            },[m
+[32m +            {[m
+[32m +              "$type": "Bookmark",[m
+[32m +              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"[m
+[32m +            },[m
+[32m +            {[m
+[32m +              "$type": "Bookmark",[m
+[32m +              "Name": "ST:0:0:{74946827-37a0-11d2-a273-00c04f8ef4ff}"[m
+[32m +            },[m
+[32m +            {[m
+[32m +              "$type": "Bookmark",[m
+[32m +              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"[m
+[32m +            },[m
+[32m +            {[m
+[32m +              "$type": "Document",[m
+[32m +              "DocumentIndex": 0,[m
+[32m +              "Title": "WebForm3.aspx",[m
+[32m +              "DocumentMoniker": "D:\\JapForAll\\JapaneseForAll\\pages\\member\\WebForm3.aspx",[m
+[32m +              "RelativeDocumentMoniker": "JapaneseForAll\\pages\\member\\WebForm3.aspx",[m
+[32m +              "ToolTip": "D:\\JapForAll\\JapaneseForAll\\pages\\member\\WebForm3.aspx",[m
+[32m +              "RelativeToolTip": "JapaneseForAll\\pages\\member\\WebForm3.aspx",[m
+[32m +              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",[m
+[32m +              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",[m
+[32m +              "WhenOpened": "2026-10-26T10:53:08.294Z",[m
+[32m +              "EditorCaption": ""[m
+[32m +            },[m
+[32m +            {[m
+[32m +              "$type": "Document",[m
+[32m +              "DocumentIndex": 3,[m
+[32m +              "Title": "dbo.USERTABLE [Data]",[m
+[32m +              "DocumentMoniker": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/D__JAPFORALL_JAPANESEFORALL_APP_DATA_DATABASE1.MDF/True/SqlTable/dbo.USERTABLE.sql",[m
+[32m +              "ToolTip": "dbo.USERTABLE [Data]",[m
+[32m +              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",[m
+[32m +              "WhenOpened": "2026-10-26T10:24:50.761Z",[m
+[32m +              "EditorCaption": ""[m
+[32m +            },[m
+[32m +            {[m
+[32m +              "$type": "Document",[m
+[32m +              "DocumentIndex": 6,[m
+[32m +              "Title": "EditUser.aspx",[m
+[32m +              "DocumentMoniker": "D:\\JapForAll\\JapaneseForAll\\pages\\admin\\EditUser.aspx",[m
+[32m +              "RelativeDocumentMoniker": "JapaneseForAll\\pages\\admin\\EditUser.aspx",[m
+[32m +              "ToolTip": "D:\\JapForAll\\JapaneseForAll\\pages\\admin\\EditUser.aspx",[m
+[32m +              "RelativeToolTip": "JapaneseForAll\\pages\\admin\\EditUser.aspx",[m
+[32m +              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",[m
+[32m +              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",[m
+[32m +              "WhenOpened": "2026-10-26T07:37:33.39Z",[m
+[32m +              "EditorCaption": ""[m
+[32m +            },[m
+[32m +            {[m
+[32m +              "$type": "Document",[m
+[32m +              "DocumentIndex": 4,[m
+[32m +              "Title": "management.aspx",[m
+[32m +              "DocumentMoniker": "D:\\JapForAll\\JapaneseForAll\\pages\\admin\\management.aspx",[m
+[32m +              "RelativeDocumentMoniker": "JapaneseForAll\\pages\\admin\\management.aspx",[m
+[32m +              "ToolTip": "D:\\JapForAll\\JapaneseForAll\\pages\\admin\\management.aspx",[m
+[32m +              "RelativeToolTip": "JapaneseForAll\\pages\\admin\\management.aspx",[m
+[32m +              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",[m
+[32m +              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",[m
+[32m +              "WhenOpened": "2026-10-26T07:38:30.131Z",[m
+[32m +              "EditorCaption": ""[m
+[32m +            },[m
+[32m +            {[m
+[32m +              "$type": "Document",[m
+[32m +              "DocumentIndex": 2,[m
+[32m +              "Title": "verification.aspx.designer.cs",[m
+[32m +              "DocumentMoniker": "D:\\JapForAll\\JapaneseForAll\\pages\\admin\\verification.aspx.designer.cs",[m
+[32m +              "RelativeDocumentMoniker": "JapaneseForAll\\pages\\admin\\verification.aspx.designer.cs",[m
+[32m +              "ToolTip": "D:\\JapForAll\\JapaneseForAll\\pages\\admin\\verification.aspx.designer.cs",[m
+[32m +              "RelativeToolTip": "JapaneseForAll\\pages\\admin\\verification.aspx.designer.cs",[m
+[32m +              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD4AAAAAAAAAAAAAAA==",[m
+[32m +              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",[m
+[32m +              "WhenOpened": "2026-10-26T07:37:44.805Z",[m
+[32m++=======[m
+[32m+           "SelectedChildIndex": 0,[m
+[32m+           "Children": [[m
+[32m+             {[m
+[32m+               "$type": "Document",[m
+[32m+               "DocumentIndex": 0,[m
+[32m+               "Title": "flashcard-list.aspx",[m
+[32m+               "DocumentMoniker": "C:\\Users\\NrAdI\\source\\repos\\JapaneseForAll\\JapaneseForAll\\pages\\member\\flashcard-list.aspx",[m
+[32m+               "RelativeDocumentMoniker": "JapaneseForAll\\pages\\member\\flashcard-list.aspx",[m
+[32m+               "ToolTip": "C:\\Users\\NrAdI\\source\\repos\\JapaneseForAll\\JapaneseForAll\\pages\\member\\flashcard-list.aspx",[m
+[32m+               "RelativeToolTip": "JapaneseForAll\\pages\\member\\flashcard-list.aspx",[m
+[32m+               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",[m
+[32m+               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",[m
+[32m+               "WhenOpened": "2026-10-27T05:52:50.404Z",[m
+[32m++>>>>>>> a53f5c9215698edb35d24e308ded88aa11184763[m
+                "EditorCaption": ""[m
+              },[m
+              {[m
+                "$type": "Document",[m
+                "DocumentIndex": 1,[m
+[32m++<<<<<<< HEAD[m
+[32m +              "Title": "verification.aspx.cs",[m
+[32m +              "DocumentMoniker": "D:\\JapForAll\\JapaneseForAll\\pages\\admin\\verification.aspx.cs",[m
+[32m +              "RelativeDocumentMoniker": "JapaneseForAll\\pages\\admin\\verification.aspx.cs",[m
+[32m +              "ToolTip": "D:\\JapForAll\\JapaneseForAll\\pages\\admin\\verification.aspx.cs",[m
+[32m +              "RelativeToolTip": "JapaneseForAll\\pages\\admin\\verification.aspx.cs",[m
+[32m +              "ViewState": "AgIAADgAAAAAAAAAAAAgwBcAAABGAAAAAAAAAA==",[m
+[32m +              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",[m
+[32m +              "WhenOpened": "2026-10-26T07:37:43.017Z",[m
+[32m++=======[m
+[32m+               "Title": "quizzes.aspx",[m
+[32m+               "DocumentMoniker": "C:\\Users\\NrAdI\\source\\repos\\JapaneseForAll\\JapaneseForAll\\pages\\member\\quizzes.aspx",[m
+[32m+               "RelativeDocumentMoniker": "JapaneseForAll\\pages\\member\\quizzes.aspx",[m
+[32m+               "ToolTip": "C:\\Users\\NrAdI\\source\\repos\\JapaneseForAll\\JapaneseForAll\\pages\\member\\quizzes.aspx",[m
+[32m+               "RelativeToolTip": "JapaneseForAll\\pages\\member\\quizzes.aspx",[m
+[32m+               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",[m
+[32m+               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",[m
+[32m+               "WhenOpened": "2026-10-27T06:22:16.033Z",[m
+[32m++>>>>>>> a53f5c9215698edb35d24e308ded88aa11184763[m
+                "EditorCaption": ""[m
+[32m +            },[m
+[32m +            {[m
+[32m +              "$type": "Document",[m
+[32m +              "DocumentIndex": 5,[m
+[32m +              "Title": "verification.aspx",[m
+[32m +              "DocumentMoniker": "D:\\JapForAll\\JapaneseForAll\\pages\\admin\\verification.aspx",[m
+[32m +              "RelativeDocumentMoniker": "JapaneseForAll\\pages\\admin\\verification.aspx",[m
+[32m +              "ToolTip": "D:\\JapForAll\\JapaneseForAll\\pages\\admin\\verification.aspx",[m
+[32m +              "RelativeToolTip": "JapaneseForAll\\pages\\admin\\verification.aspx",[m
+[32m +              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",[m
+[32m +              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",[m
+[32m +              "WhenOpened": "2026-10-26T07:33:32.47Z",[m
+[32m +              "EditorCaption": ""[m
+[32m +            },[m
+[32m +            {[m
+[32m +              "$type": "Bookmark",[m
+[32m +              "Name": "ST:175539669:0:{83107a3e-496a-485e-b455-16ddb978e55e}"[m
+              }[m
+            ][m
+          }[m
+[1mdiff --cc .vs/JapaneseForAll.slnx/v18/DocumentLayout.json[m
+[1mindex cf35176,049e3ad..0000000[m
+[1m--- a/.vs/JapaneseForAll.slnx/v18/DocumentLayout.json[m
+[1m+++ b/.vs/JapaneseForAll.slnx/v18/DocumentLayout.json[m
+[36m@@@ -1,29 -1,18 +1,42 @@@[m
+  {[m
+    "Version": 1,[m
+[31m -  "WorkspaceRootPath": "C:\\Users\\NrAdI\\source\\repos\\JapaneseForAll\\",[m
+[32m +  "WorkspaceRootPath": "D:\\JapForAll\\",[m
+    "Documents": [[m
+      {[m
+[32m++<<<<<<< HEAD[m
+[32m +      "AbsoluteMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|d:\\japforall\\japaneseforall\\pages\\admin\\verification.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",[m
+[32m +      "RelativeMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|solutionrelative:japaneseforall\\pages\\admin\\verification.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"[m
+[32m +    },[m
+[32m +    {[m
+[32m +      "AbsoluteMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|d:\\japforall\\japaneseforall\\pages\\admin\\verification.aspx.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",[m
+[32m +      "RelativeMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|solutionrelative:japaneseforall\\pages\\admin\\verification.aspx.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"[m
+[32m +    },[m
+[32m +    {[m
+[32m +      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/D__JAPFORALL_JAPANESEFORALL_APP_DATA_DATABASE1.MDF/True/SqlTable/dbo.USERTABLE.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"[m
+[32m +    },[m
+[32m +    {[m
+[32m +      "AbsoluteMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|d:\\japforall\\japaneseforall\\pages\\admin\\management.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",[m
+[32m +      "RelativeMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|solutionrelative:japaneseforall\\pages\\admin\\management.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"[m
+[32m +    },[m
+[32m +    {[m
+[32m +      "AbsoluteMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|d:\\japforall\\japaneseforall\\pages\\admin\\verification.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",[m
+[32m +      "RelativeMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|solutionrelative:japaneseforall\\pages\\admin\\verification.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"[m
+[32m +    },[m
+[32m +    {[m
+[32m +      "AbsoluteMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|d:\\japforall\\japaneseforall\\pages\\admin\\edituser.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",[m
+[32m +      "RelativeMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|solutionrelative:japaneseforall\\pages\\admin\\edituser.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"[m
+[32m++=======[m
+[32m+       "AbsoluteMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|c:\\users\\nradi\\source\\repos\\japaneseforall\\japaneseforall\\pages\\instructor\\quiz-editor.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",[m
+[32m+       "RelativeMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|solutionrelative:japaneseforall\\pages\\instructor\\quiz-editor.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"[m
+[32m+     },[m
+[32m+     {[m
+[32m+       "AbsoluteMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|c:\\users\\nradi\\source\\repos\\japaneseforall\\japaneseforall\\pages\\member\\flashcard-list.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",[m
+[32m+       "RelativeMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|solutionrelative:japaneseforall\\pages\\member\\flashcard-list.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"[m
+[32m+     },[m
+[32m+     {[m
+[32m+       "AbsoluteMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|c:\\users\\nradi\\source\\repos\\japaneseforall\\japaneseforall\\pages\\member\\quizzes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",[m
+[32m+       "RelativeMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|solutionrelative:japaneseforall\\pages\\member\\quizzes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"[m
+[32m++>>>>>>> a53f5c9215698edb35d24e308ded88aa11184763[m
+      }[m
+    ],[m
+    "DocumentGroupContainers": [[m
+[36m@@@ -33,102 -22,46 +46,127 @@@[m
+        "DocumentGroups": [[m
+          {[m
+            "DockedWidth": 249,[m
+[32m++<<<<<<< HEAD[m
+[32m +          "SelectedChildIndex": 8,[m
+[32m++=======[m
+[32m+           "SelectedChildIndex": 0,[m
+[32m++>>>>>>> a53f5c9215698edb35d24e308ded88aa11184763[m
+            "Children": [[m
+[31m-             {[m
+[31m-               "$type": "Bookmark",[m
+[31m-               "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"[m
+[31m-             },[m
+[31m-             {[m
+[31m-               "$type": "Bookmark",[m
+[31m-               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"[m
+[31m-             },[m
+[31m-             {[m
+[31m-               "$type": "Bookmark",[m
+[31m-               "Name": "ST:0:0:{74946827-37a0-11d2-a273-00c04f8ef4ff}"[m
+[31m-             },[m
+[31m-             {[m
+[31m-               "$type": "Bookmark",[m
+[31m-               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"[m
+[31m-             },[m
+              {[m
+                "$type": "Document",[m
+[32m++<<<<<<< HEAD[m
+[32m +              "DocumentIndex": 2,[m
+[32m +              "Title": "dbo.USERTABLE [Data]",[m
+[32m +              "DocumentMoniker": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/D__JAPFORALL_JAPANESEFORALL_APP_DATA_DATABASE1.MDF/True/SqlTable/dbo.USERTABLE.sql",[m
+[32m +              "ToolTip": "dbo.USERTABLE [Data]",[m
+[32m +              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",[m
+[32m +              "WhenOpened": "2026-10-26T10:24:50.761Z",[m
+[32m++=======[m
+[32m+               "DocumentIndex": 0,[m
+[32m+               "Title": "quiz-editor.aspx",[m
+[32m+               "DocumentMoniker": "C:\\Users\\NrAdI\\source\\repos\\JapaneseForAll\\JapaneseForAll\\pages\\instructor\\quiz-editor.aspx",[m
+[32m+               "RelativeDocumentMoniker": "JapaneseForAll\\pages\\instructor\\quiz-editor.aspx",[m
+[32m+               "ToolTip": "C:\\Users\\NrAdI\\source\\repos\\JapaneseForAll\\JapaneseForAll\\pages\\instructor\\quiz-editor.aspx",[m
+[32m+               "RelativeToolTip": "JapaneseForAll\\pages\\instructor\\quiz-editor.aspx",[m
+[32m+               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",[m
+[32m+               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",[m
+[32m+               "WhenOpened": "2026-10-27T06:37:28.056Z",[m
+[32m+               "EditorCaption": ""[m
+[32m+             },[m
+[32m+             {[m
+[32m+               "$type": "Document",[m
+[32m+               "DocumentIndex": 1,[m
+[32m+               "Title": "flashcard-list.aspx",[m
+[32m+               "DocumentMoniker": "C:\\Users\\NrAdI\\source\\repos\\JapaneseForAll\\JapaneseForAll\\pages\\member\\flashcard-list.aspx",[m
+[32m+               "RelativeDocumentMoniker": "JapaneseForAll\\pages\\member\\flashcard-list.aspx",[m
+[32m+               "ToolTip": "C:\\Users\\NrAdI\\source\\repos\\JapaneseForAll\\JapaneseForAll\\pages\\member\\flashcard-list.aspx",[m
+[32m+               "RelativeToolTip": "JapaneseForAll\\pages\\member\\flashcard-list.aspx",[m
+[32m+               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",[m
+[32m+               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",[m
+[32m+               "WhenOpened": "2026-10-27T05:52:50.404Z",[m
+[32m++>>>>>>> a53f5c9215698edb35d24e308ded88aa11184763[m
+                "EditorCaption": ""[m
+              },[m
+              {[m
+                "$type": "Document",[m
+[32m++<<<<<<< HEAD[m
+[32m +              "DocumentIndex": 5,[m
+[32m +              "Title": "EditUser.aspx",[m
+[32m +              "DocumentMoniker": "D:\\JapForAll\\JapaneseForAll\\pages\\admin\\EditUser.aspx",[m
+[32m +              "RelativeDocumentMoniker": "JapaneseForAll\\pages\\admin\\EditUser.aspx",[m
+[32m +              "ToolTip": "D:\\JapForAll\\JapaneseForAll\\pages\\admin\\EditUser.aspx",[m
+[32m +              "RelativeToolTip": "JapaneseForAll\\pages\\admin\\EditUser.aspx",[m
+[32m +              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",[m
+[32m +              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",[m
+[32m +              "WhenOpened": "2026-10-26T07:37:33.39Z",[m
+[32m +              "EditorCaption": ""[m
+[32m +            },[m
+[32m +            {[m
+[32m +              "$type": "Document",[m
+[32m +              "DocumentIndex": 3,[m
+[32m +              "Title": "management.aspx",[m
+[32m +              "DocumentMoniker": "D:\\JapForAll\\JapaneseForAll\\pages\\admin\\management.aspx",[m
+[32m +              "RelativeDocumentMoniker": "JapaneseForAll\\pages\\admin\\management.aspx",[m
+[32m +              "ToolTip": "D:\\JapForAll\\JapaneseForAll\\pages\\admin\\management.aspx",[m
+[32m +              "RelativeToolTip": "JapaneseForAll\\pages\\admin\\management.aspx",[m
+[32m +              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",[m
+[32m +              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",[m
+[32m +              "WhenOpened": "2026-10-26T07:38:30.131Z",[m
+[32m +              "EditorCaption": ""[m
+[32m +            },[m
+[32m +            {[m
+[32m +              "$type": "Document",[m
+[32m +              "DocumentIndex": 1,[m
+[32m +              "Title": "verification.aspx.designer.cs",[m
+[32m +              "DocumentMoniker": "D:\\JapForAll\\JapaneseForAll\\pages\\admin\\verification.aspx.designer.cs",[m
+[32m +              "RelativeDocumentMoniker": "JapaneseForAll\\pages\\admin\\verification.aspx.designer.cs",[m
+[32m +              "ToolTip": "D:\\JapForAll\\JapaneseForAll\\pages\\admin\\verification.aspx.designer.cs",[m
+[32m +              "RelativeToolTip": "JapaneseForAll\\pages\\admin\\verification.aspx.designer.cs",[m
+[32m +              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD4AAAAAAAAAAAAAAA==",[m
+[32m +              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",[m
+[32m +              "WhenOpened": "2026-10-26T07:37:44.805Z",[m
+[32m +              "EditorCaption": ""[m
+[32m +            },[m
+[32m +            {[m
+[32m +              "$type": "Document",[m
+[32m +              "DocumentIndex": 0,[m
+[32m +              "Title": "verification.aspx.cs",[m
+[32m +              "DocumentMoniker": "D:\\JapForAll\\JapaneseForAll\\pages\\admin\\verification.aspx.cs",[m
+[32m +              "RelativeDocumentMoniker": "JapaneseForAll\\pages\\admin\\verification.aspx.cs",[m
+[32m +              "ToolTip": "D:\\JapForAll\\JapaneseForAll\\pages\\admin\\verification.aspx.cs",[m
+[32m +              "RelativeToolTip": "JapaneseForAll\\pages\\admin\\verification.aspx.cs",[m
+[32m +              "ViewState": "AgIAADgAAAAAAAAAAAAgwEAAAAAJAAAAAAAAAA==",[m
+[32m +              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",[m
+[32m +              "WhenOpened": "2026-10-26T07:37:43.017Z",[m
+[32m +              "EditorCaption": ""[m
+[32m +            },[m
+[32m +            {[m
+[32m +              "$type": "Document",[m
+[32m +              "DocumentIndex": 4,[m
+[32m +              "Title": "verification.aspx",[m
+[32m +              "DocumentMoniker": "D:\\JapForAll\\JapaneseForAll\\pages\\admin\\verification.aspx",[m
+[32m +              "RelativeDocumentMoniker": "JapaneseForAll\\pages\\admin\\verification.aspx",[m
+[32m +              "ToolTip": "D:\\JapForAll\\JapaneseForAll\\pages\\admin\\verification.aspx",[m
+[32m +              "RelativeToolTip": "JapaneseForAll\\pages\\admin\\verification.aspx",[m
+[32m +              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",[m
+[32m +              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",[m
+[32m +              "WhenOpened": "2026-10-26T07:33:32.47Z",[m
+[32m++=======[m
+[32m+               "DocumentIndex": 2,[m
+[32m+               "Title": "quizzes.aspx",[m
+[32m+               "DocumentMoniker": "C:\\Users\\NrAdI\\source\\repos\\JapaneseForAll\\JapaneseForAll\\pages\\member\\quizzes.aspx",[m
+[32m+               "RelativeDocumentMoniker": "JapaneseForAll\\pages\\member\\quizzes.aspx",[m
+[32m+               "ToolTip": "C:\\Users\\NrAdI\\source\\repos\\JapaneseForAll\\JapaneseForAll\\pages\\member\\quizzes.aspx",[m
+[32m+               "RelativeToolTip": "JapaneseForAll\\pages\\member\\quizzes.aspx",[m
+[32m+               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",[m
+[32m+               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",[m
+[32m+               "WhenOpened": "2026-10-27T06:22:16.033Z",[m
+[32m++>>>>>>> a53f5c9215698edb35d24e308ded88aa11184763[m
+                "EditorCaption": ""[m
+[32m +            },[m
+[32m +            {[m
+[32m +              "$type": "Bookmark",[m
+[32m +              "Name": "ST:175539669:0:{83107a3e-496a-485e-b455-16ddb978e55e}"[m
+              }[m
+            ][m
+          }[m
+[1mdiff --cc JapaneseForAll/App_Data/Database1.mdf[m
+[1mindex 70c3e7d,834200b..0000000[m
+Binary files differ
+[1mdiff --cc JapaneseForAll/App_Data/Database1_log.ldf[m
+[1mindex 6c85b85,7a408e8..0000000[m
+Binary files differ
+[1mdiff --cc JapaneseForAll/bin/JapaneseForAll.dll[m
+[1mindex b30f7a3,91dd16d..0000000[m
+Binary files differ
+[1mdiff --cc JapaneseForAll/bin/JapaneseForAll.pdb[m
+[1mindex a4182ad,e79510b..0000000[m
+Binary files differ
+[1mdiff --cc JapaneseForAll/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache[m
+[1mindex f053cec,63e5ab7..0000000[m
+Binary files differ
+[1mdiff --cc JapaneseForAll/obj/Debug/JapaneseForAll.csproj.AssemblyReference.cache[m
+[1mindex ef853e4,db52c76..0000000[m
+Binary files differ
+[1mdiff --cc JapaneseForAll/obj/Debug/JapaneseForAll.csproj.CoreCompileInputs.cache[m
+[1mindex a8297ab,84b8f3c..0000000[m
+[1m--- a/JapaneseForAll/obj/Debug/JapaneseForAll.csproj.CoreCompileInputs.cache[m
+[1m+++ b/JapaneseForAll/obj/Debug/JapaneseForAll.csproj.CoreCompileInputs.cache[m
+[36m@@@ -1,1 -1,1 +1,5 @@@[m
+[32m++<<<<<<< HEAD[m
+[32m +19b64e6d53856b8817856cb7585819f6d872e8d79b7336b6b21b67614ba3e6ce[m
+[32m++=======[m
+[32m+ 3b8553b4daf85063d6447b71cc81dd603ce133362cfca85231ec3aedfd4da053[m
+[32m++>>>>>>> a53f5c9215698edb35d24e308ded88aa11184763[m
+[1mdiff --cc JapaneseForAll/obj/Debug/JapaneseForAll.dll[m
+[1mindex b30f7a3,91dd16d..0000000[m
+Binary files differ
+[1mdiff --cc JapaneseForAll/obj/Debug/JapaneseForAll.pdb[m
+[1mindex a4182ad,e79510b..0000000[m
+Binary files differ

@@ -60,7 +60,7 @@ namespace JapaneseForAll.pages.publics
                 SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["JPDB"].ConnectionString);
                 con.Open();
 
-                string query = "SELECT TITLE, LEVEL, QUESTION_COUNT, URL FROM QUIZTABLE WHERE STATUS='ACTIVE'";
+                string query = "SELECT TITLE, LEVEL, QUESTION_COUNT, URL FROM QUIZTABLE WHERE STATUS='PUBLISHED'";
 
                 if (!string.IsNullOrEmpty(level))
                 {

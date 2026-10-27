@@ -20,7 +20,6 @@
         <main>
             <div class="panel">
                 <h2>Quizzes</h2>
-                <p class="mut">Log in to track your scores.</p>
                     <a class="fb on" href="quizzes.aspx">All Levels</a>
                     <a class="fb" href="quizzes.aspx?level=N5">N5</a>
                     <a class="fb" href="quizzes.aspx?level=N4">N4</a>
@@ -32,31 +31,23 @@
                 <div class="grid3">
                     <asp:Label runat="server" ID="errMsg" ForeColor="White" Text="There are no quizzes at the moment! Come back later." Visible="false"></asp:Label>
                     <asp:Repeater ID="quizRepeater" runat="server">
-                        <ItemTemplate>
+                       <ItemTemplate>
                             <div class="card">
                                 <div class="top">
                                     <span class='lvl <%# Eval("Level") %>'>
                                         <%# Eval("Level") %>
-                                    </span>
-
-                                    <span class='st <%# Eval("StatusCss") %>'>
-                                        <%# Eval("ProgressStatus") %>
                                     </span>
                                 </div>
 
                                 <h3><%# Eval("Title") %></h3>
 
                                 <p class="mut">
-                                    <%# Eval("QuestionCount") %> Qs · Score:
-                                    <%# Eval("Score") == DBNull.Value
-                                        ? "—"
-                                        : Eval("Score").ToString() + " / " +
-                                          Eval("QuestionCount").ToString() %>
+                                    <%# Eval("QuestionCount") %> Qs
                                 </p>
 
                                 <a class="btn sm"
                                    href='quiz.aspx?id=<%# Eval("QuizId") %>'>
-                                    <%# Eval("ActionText") %>
+                                    Start →
                                 </a>
                             </div>
                         </ItemTemplate>

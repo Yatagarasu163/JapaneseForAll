@@ -9,6 +9,10 @@
                 <asp:HyperLink runat="server" ID="lnkQuizzes" Text="Quiz"  NavigateUrl="~/pages/member/quizzes.aspx"/>
                 <asp:HyperLink runat="server" ID="lnkForum" Text="Forum" NavigateUrl="~/pages/member/forum.aspx"/>
                 <asp:HyperLink runat="server" ID="lnkProfile" Text="Profile" NavigateUrl="~/pages/member/profile.aspx"/>
+
+        
+
+
             </nav>
             <div class="rt">
                 <span><asp:Label runat="server" ID="fname1"></asp:Label></span><span class="av"><asp:Label runat="server" ID="initial"></asp:Label></span>

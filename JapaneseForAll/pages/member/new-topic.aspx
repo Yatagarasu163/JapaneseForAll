@@ -31,7 +31,7 @@
                         DisplayMode="BulletList"
                         ValidationGroup="Forum"
                         />
-                    <label>Topic Title<asp:TextBox ID="title" runat="server" placeholder="e.g. Best resources for learning Kanji"></asp:TextBox></label>
+                    <label>Topic Title<asp:TextBox ID="title" runat="server" placeholder="e.g. Best resources for learning Kanji" OnTextChanged="title_TextChanged"></asp:TextBox></label>
                     <asp:RequiredFieldValidator ID="titleValidator" runat="server" ControlToValidate="title" ErrorMessage="Title is missing." Text="*" ForeColor="Red" ValidationGroup="Forum" />
                     <label>Category</label>
                     <div class="chips">
@@ -42,7 +42,7 @@
                       <label class="chip"><asp:RadioButton ID="rbSpeaking" runat="server" GroupName="category" Text=""/><span>Speaking</span></label>
                       <label class="chip"><asp:RadioButton ID="rbGeneral" runat="server" GroupName="category" Text=""/><span>General</span></label>
                     </div>
-                        <label>Message<asp:TextBox ID="msg" runat="server" Placeholder="Write your thoughts here!" TextMode="MultiLine" Rows="5" CssClass="textarea"></asp:TextBox></label>
+                        <label>Message<asp:TextBox ID="msg" runat="server" Placeholder="Write your thoughts here!" TextMode="MultiLine" Rows="5" CssClass="textarea" OnTextChanged="msg_TextChanged"></asp:TextBox></label>
                         <asp:RequiredFieldValidator ID="msgValidator" runat="server" ControlToValidate="msg" ErrorMessage="Message is missing." Text="*" ForeColor="Red" ValidationGroup="Forum" />
                             <div class="row"><asp:Button ID="cancel" CssClass="btn ghost" runat="server" OnClick="OnCancel_Click" Text="Cancel"/><asp:Button ID="submit" CssClass="btn" runat="server" OnClick="OnSubmit_Click" Text="Publish Topic" /></div>       
                 </div>

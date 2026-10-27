@@ -127,8 +127,12 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="js\register.js" />
+    <Content Include="pages\admin\management.aspx" />
+    <Content Include="pages\admin\EditUser.aspx" />
+    <Content Include="pages\admin\verification.aspx" />
     <Content Include="pages\components\InstructorNavbar.ascx" />
     <Content Include="pages\components\Navbar.ascx" />
+    <Content Include="pages\components\AdminNavbar.ascx" />
     <Content Include="pages\instructor\content.aspx" />
     <Content Include="pages\member\dashboard.aspx" />
     <Content Include="pages\member\flashcards.aspx" />
@@ -209,6 +213,27 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="pages\admin\management.aspx.cs">
+      <DependentUpon>management.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\admin\management.aspx.designer.cs">
+      <DependentUpon>management.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\admin\EditUser.aspx.cs">
+      <DependentUpon>EditUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\admin\EditUser.aspx.designer.cs">
+      <DependentUpon>EditUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\admin\verification.aspx.cs">
+      <DependentUpon>verification.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\admin\verification.aspx.designer.cs">
+      <DependentUpon>verification.aspx</DependentUpon>
+    </Compile>
     <Compile Include="pages\components\InstructorNavbar.ascx.cs">
       <DependentUpon>InstructorNavbar.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -222,6 +247,13 @@
     </Compile>
     <Compile Include="pages\components\Navbar.ascx.designer.cs">
       <DependentUpon>Navbar.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\components\AdminNavbar.ascx.cs">
+      <DependentUpon>AdminNavbar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\components\AdminNavbar.ascx.designer.cs">
+      <DependentUpon>AdminNavbar.ascx</DependentUpon>
     </Compile>
     <Compile Include="pages\instructor\content.aspx.cs">
       <DependentUpon>content.aspx</DependentUpon>
@@ -337,9 +369,7 @@
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="pages\admin\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.7.0.slim.min.map" />

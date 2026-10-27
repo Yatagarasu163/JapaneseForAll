@@ -50,6 +50,7 @@ namespace JapaneseForAll
 
                         Session["fname"] = name;
                         Session["uid"] = uid;
+                        Session["role"] = role;
 
                         if (role == "Member")
                         {
@@ -59,7 +60,7 @@ namespace JapaneseForAll
                             Response.Redirect("../instructor/content.aspx");
                         } else if (role == "Admin")
                         {
-                            Response.Redirect("../admin/dashboard.aspx");
+                            Response.Redirect("../admin/management.aspx");
                         }
                         else
                         {

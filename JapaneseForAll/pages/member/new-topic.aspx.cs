@@ -54,5 +54,7 @@ namespace JapaneseForAll.pages.member
 
             Response.Redirect("~/pages/member/forum.aspx");
         }
+
+        
     }
 }

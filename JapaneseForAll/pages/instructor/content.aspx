@@ -23,7 +23,8 @@
                 <div><h2>Learning Content Management</h2><p class="mut">Create and manage flashcards, quizzes and audio visual modules</p></div>
                 <a class="btn" href="module-form.aspx">+ Create Content</a>
                 </div>
-                <div class="sc"><table>
+                <div class="sc">
+                    <table>
                 <tr><th>Module</th><th>Type</th><th>Level</th><th>Status</th><th>Actions</th></tr>
                 <!-- REPEAT: one row per module -->
                 <asp:Repeater ID="moduleRepeater" runat="server">
@@ -40,14 +41,9 @@
                         </tr>
                     </ItemTemplate>
                 </asp:Repeater>
-                </table></div>
-                <h3>Recent Quiz Submissions to Review</h3>
-                <div class="sc"><table>
-                <tr><th>Member</th><th>Quiz</th><th>Score</th><th>Status</th></tr>
-                <!-- REPEAT: one row per submission -->
-                <tr><td>Wong Jun Hao</td><td>N5 Basic Greetings</td><td>9 / 10</td><td><span class="badge Reviewed">Reviewed</span></td></tr>
-                <tr><td>Narish Kumar Dey</td><td>N5 Numbers &amp; Counting</td><td>7 / 10</td><td><span class="badge Pending">Pending</span></td></tr>
-                </table></div>
+                </table>
+                    <asp:Label runat="server" ID="errMsg" Visible="false"></asp:Label>
+                </div>
             </div>
         </main>
     </form>

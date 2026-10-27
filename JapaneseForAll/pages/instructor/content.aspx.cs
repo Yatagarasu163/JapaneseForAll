@@ -33,15 +33,27 @@ namespace JapaneseForAll.pages.instructor
                 using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["JPDB"].ConnectionString))
                 {
 
-                string query = @"
-                                SELECT
-                                    Q.QUIZ_ID AS ModuleId,
-                                    Q.TITLE AS Title,
-                                    'Quiz' AS Type,
-                                    Q.LEVEL AS Level,
-                                    Q.STATUS AS Status
-                                FROM QUIZTABLE Q
-                                ORDER BY Q.TITLE;";
+                    string query = @"
+SELECT
+    F.FLASHCARD_ID AS ModuleId,
+    F.TITLE AS Title,
+    'Flashcards' AS Type,
+    F.LEVEL AS Level,
+    F.STATUS AS Status,
+    F.DESCRIPTION AS Description,
+    COUNT(C.CARD_ID) AS CardCount
+FROM dbo.FLASHCARDTABLE F
+LEFT JOIN dbo.CARD_TABLE C
+    ON C.FLASHCARD_ID = F.FLASHCARD_ID
+WHERE F.STATUS <> 'DELETED'
+GROUP BY
+    F.FLASHCARD_ID,
+    F.TITLE,
+    F.LEVEL,
+    F.STATUS,
+    F.DESCRIPTION
+ORDER BY F.TITLE;
+";
 
                     using (SqlCommand cmd = new SqlCommand(query, con))
                     {
@@ -51,7 +63,7 @@ namespace JapaneseForAll.pages.instructor
                         da.Fill(dt);
                         foreach(DataRow row in dt.Rows)
                         {
-                            if (row["Status"].ToString().Trim() == "DELETE")
+                            if (row["Status"].ToString().Trim() != "DELETED")
                             {
                                 modules.Add(new Module
                                 {
@@ -59,7 +71,7 @@ namespace JapaneseForAll.pages.instructor
                                     Type = row["Type"].ToString().Trim(),
                                     Level = row["Level"].ToString().Trim(),
                                     Status = row["Status"].ToString().Trim(),
-                                    ModuleId = row["ModuleId"].ToString().Trim()
+                                    ModuleId = row["ModuleId"].ToString().Trim(),
                                 });
                             }
                         }
@@ -79,7 +91,7 @@ namespace JapaneseForAll.pages.instructor
 
             using(SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["JPDB"].ConnectionString))
             {
-                string query = "UPDATE QUIZTABLE SET STATUS = 'DELETED' WHERE QUIZ_ID = @moduleId";
+                string query = "UPDATE FLASHCARDTABLE SET STATUS = 'DELETED' WHERE FLASHCARD_ID = @moduleId";
 
                 con.Open();
 
@@ -91,17 +103,10 @@ namespace JapaneseForAll.pages.instructor
 
                     if(rowsAffected > 0)
                     {
-
+                        errMsg.Visible = true;
+                        errMsg.ForeColor = System.Drawing.Color.Green;
+                        errMsg.Text = "Successfully deleted flashcard!";
                     }
-                }
-
-                query = "UPDATE FLASHCARDTABLE SET STATUS = 'DELETED' WHERE QUIZ_ID = @moduleId";
-
-                using(SqlCommand cmd = new SqlCommand(query, con))
-                {
-                    cmd.Parameters.AddWithValue("@moduleId", moduleId);
-
-                    cmd.ExecuteNonQuery();
                 }
             }
         }

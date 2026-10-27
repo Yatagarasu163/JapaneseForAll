@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\NrAdI\\source\\repos\\JapaneseForAll\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|c:\\users\\nradi\\source\\repos\\japaneseforall\\japaneseforall\\pages\\instructor\\quizzes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|solutionrelative:japaneseforall\\pages\\instructor\\quizzes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|c:\\users\\nradi\\source\\repos\\japaneseforall\\japaneseforall\\pages\\instructor\\quiz-editor.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|solutionrelative:japaneseforall\\pages\\instructor\\quiz-editor.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|c:\\users\\nradi\\source\\repos\\japaneseforall\\japaneseforall\\pages\\instructor\\content.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|solutionrelative:japaneseforall\\pages\\instructor\\content.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|c:\\users\\nradi\\source\\repos\\japaneseforall\\japaneseforall\\pages\\member\\flashcard-list.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|solutionrelative:japaneseforall\\pages\\member\\flashcard-list.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|C:\\Users\\NrAdI\\source\\repos\\JapaneseForAll\\japaneseforall\\pages\\instructor\\content.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|solutionrelative:japaneseforall\\pages\\instructor\\content.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|c:\\users\\nradi\\source\\repos\\japaneseforall\\japaneseforall\\pages\\member\\quizzes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|solutionrelative:japaneseforall\\pages\\member\\quizzes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,67 +22,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 249,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{74946827-37a0-11d2-a273-00c04f8ef4ff}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "quizzes.aspx",
-              "DocumentMoniker": "C:\\Users\\NrAdI\\source\\repos\\JapaneseForAll\\JapaneseForAll\\pages\\instructor\\quizzes.aspx",
-              "RelativeDocumentMoniker": "JapaneseForAll\\pages\\instructor\\quizzes.aspx",
-              "ToolTip": "C:\\Users\\NrAdI\\source\\repos\\JapaneseForAll\\JapaneseForAll\\pages\\instructor\\quizzes.aspx",
-              "RelativeToolTip": "JapaneseForAll\\pages\\instructor\\quizzes.aspx",
+              "Title": "quiz-editor.aspx",
+              "DocumentMoniker": "C:\\Users\\NrAdI\\source\\repos\\JapaneseForAll\\JapaneseForAll\\pages\\instructor\\quiz-editor.aspx",
+              "RelativeDocumentMoniker": "JapaneseForAll\\pages\\instructor\\quiz-editor.aspx",
+              "ToolTip": "C:\\Users\\NrAdI\\source\\repos\\JapaneseForAll\\JapaneseForAll\\pages\\instructor\\quiz-editor.aspx",
+              "RelativeToolTip": "JapaneseForAll\\pages\\instructor\\quiz-editor.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2026-10-21T10:01:55.211Z",
+              "WhenOpened": "2026-10-27T06:37:28.056Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "flashcard-list.aspx",
+              "DocumentMoniker": "C:\\Users\\NrAdI\\source\\repos\\JapaneseForAll\\JapaneseForAll\\pages\\member\\flashcard-list.aspx",
+              "RelativeDocumentMoniker": "JapaneseForAll\\pages\\member\\flashcard-list.aspx",
+              "ToolTip": "C:\\Users\\NrAdI\\source\\repos\\JapaneseForAll\\JapaneseForAll\\pages\\member\\flashcard-list.aspx",
+              "RelativeToolTip": "JapaneseForAll\\pages\\member\\flashcard-list.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-10-27T05:52:50.404Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "content.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\NrAdI\\source\\repos\\JapaneseForAll\\JapaneseForAll\\pages\\instructor\\content.aspx.cs",
-              "RelativeDocumentMoniker": "JapaneseForAll\\pages\\instructor\\content.aspx.cs",
-              "ToolTip": "C:\\Users\\NrAdI\\source\\repos\\JapaneseForAll\\JapaneseForAll\\pages\\instructor\\content.aspx.cs",
-              "RelativeToolTip": "JapaneseForAll\\pages\\instructor\\content.aspx.cs",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAcwF0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-13T06:45:02.46Z",
-              "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 249,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "content.aspx",
-              "DocumentMoniker": "C:\\Users\\NrAdI\\source\\repos\\JapaneseForAll\\JapaneseForAll\\pages\\instructor\\content.aspx",
-              "RelativeDocumentMoniker": "JapaneseForAll\\pages\\instructor\\content.aspx",
-              "ToolTip": "C:\\Users\\NrAdI\\source\\repos\\JapaneseForAll\\JapaneseForAll\\pages\\instructor\\content.aspx",
-              "RelativeToolTip": "JapaneseForAll\\pages\\instructor\\content.aspx",
+              "Title": "quizzes.aspx",
+              "DocumentMoniker": "C:\\Users\\NrAdI\\source\\repos\\JapaneseForAll\\JapaneseForAll\\pages\\member\\quizzes.aspx",
+              "RelativeDocumentMoniker": "JapaneseForAll\\pages\\member\\quizzes.aspx",
+              "ToolTip": "C:\\Users\\NrAdI\\source\\repos\\JapaneseForAll\\JapaneseForAll\\pages\\member\\quizzes.aspx",
+              "RelativeToolTip": "JapaneseForAll\\pages\\member\\quizzes.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2026-10-21T09:56:28.005Z",
+              "WhenOpened": "2026-10-27T06:22:16.033Z",
               "EditorCaption": ""
             }
           ]

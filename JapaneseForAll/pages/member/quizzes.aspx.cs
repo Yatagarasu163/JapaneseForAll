@@ -15,14 +15,10 @@ namespace JapaneseForAll.pages.member
 
         public class Quiz
         {
-            public string Title {  get; set; }
-            public String Level { get; set; }
-            public int QuestionCount {  get; set; }
-            public String StatusCss{  get; set; }
-            public int? Score { get; set; }
+            public string Title { get; set; }
+            public string Level { get; set; }
+            public int QuestionCount { get; set; }
             public int QuizId { get; set; }
-            public String ActionText{  get; set; }
-            public String ProgressStatus { get; set; }
         }
 
         private string[] validLevels = { "N5", "N4", "N3", "N2", "N1" };
@@ -49,34 +45,14 @@ namespace JapaneseForAll.pages.member
                 SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["JPDB"].ConnectionString);
                 con.Open();
 
-                string query = @"SELECT
-                                q.QUIZ_ID,
-                                q.TITLE,
-                                q.LEVEL,
-                                q.QUESTION_COUNT,
-
-                                COALESCE(p.STATUS, 'Not Started') AS ProgressStatus,
-                                p.SCORE,
-
-                                CASE
-                                    WHEN p.STATUS = 'Completed' THEN 'Review →'
-                                    WHEN p.STATUS = 'In Progress' THEN 'Continue →'
-                                    ELSE 'Start →'
-                                END AS ActionText,
-
-                                CASE
-                                    WHEN p.STATUS = 'Completed' THEN 'C'
-                                    WHEN p.STATUS = 'In Progress' THEN 'I'
-                                    ELSE 'N'
-                                END AS StatusCss
-
-                            FROM QUIZTABLE q
-
-                            LEFT JOIN QUIZPROGRESSTABLE p
-                                ON p.QUIZ_ID = q.QUIZ_ID
-                                AND p.USER_ID = @userId
-
-                            WHERE q.STATUS = 'ACTIVE'";
+                string query = @"
+                    SELECT
+                        q.QUIZ_ID,
+                        q.TITLE,
+                        q.LEVEL,
+                        q.QUESTION_COUNT
+                    FROM QUIZTABLE q
+                    WHERE q.STATUS = 'PUBLISHED'";
 
                 if (!string.IsNullOrEmpty(level))
                 {
@@ -84,11 +60,10 @@ namespace JapaneseForAll.pages.member
                 }
 
                 SqlCommand cmd = new SqlCommand(query, con);
-                cmd.Parameters.AddWithValue("@userId", Convert.ToInt32(Session["uid"]));
 
                 if (!string.IsNullOrEmpty(level))
                 {
-                    cmd.Parameters.AddWithValue("@LEVEL", level);
+                    query += " AND q.LEVEL = @LEVEL";
                 }
 
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -96,21 +71,14 @@ namespace JapaneseForAll.pages.member
                 DataTable dt = new DataTable();
                 da.Fill(dt);
 
-                foreach(DataRow quiz in dt.Rows)
+                foreach (DataRow quiz in dt.Rows)
                 {
                     quizzes.Add(new Quiz
                     {
                         QuizId = Convert.ToInt32(quiz["QUIZ_ID"]),
                         Title = quiz["TITLE"].ToString(),
                         Level = quiz["LEVEL"].ToString(),
-                        QuestionCount = Convert.ToInt32(quiz["QUESTION_COUNT"]),
-
-                        ProgressStatus = quiz["ProgressStatus"].ToString(),
-
-                        Score = quiz["SCORE"] == DBNull.Value ? (int?)null : Convert.ToInt32(quiz["SCORE"]),
-
-                        ActionText = quiz["ActionText"].ToString(),
-                        StatusCss = quiz["StatusCss"].ToString()
+                        QuestionCount = Convert.ToInt32(quiz["QUESTION_COUNT"])
                     });
                 }
 
@@ -128,6 +96,10 @@ namespace JapaneseForAll.pages.member
 
             } catch(Exception ex)
             {
+                errMsg.Visible = true;
+                errMsg.ForeColor = System.Drawing.Color.Red;
+                errMsg.Text = "Database error: " + ex.Message;
+
                 System.Diagnostics.Trace.TraceError(ex.ToString());
             }
 

@@ -130,11 +130,14 @@
     <Content Include="pages\components\InstructorNavbar.ascx" />
     <Content Include="pages\components\Navbar.ascx" />
     <Content Include="pages\instructor\content.aspx" />
+    <Content Include="pages\instructor\quiz-editor.aspx" />
     <Content Include="pages\member\dashboard.aspx" />
+    <Content Include="pages\member\flashcard-list.aspx" />
     <Content Include="pages\member\flashcards.aspx" />
     <Content Include="pages\member\forum.aspx" />
     <Content Include="pages\member\new-topic.aspx" />
     <Content Include="pages\member\profile.aspx" />
+    <Content Include="pages\member\quiz.aspx" />
     <Content Include="pages\member\quizzes.aspx" />
     <Content Include="pages\member\thread.aspx" />
     <Content Include="pages\publics\register.aspx" />
@@ -230,12 +233,26 @@
     <Compile Include="pages\instructor\content.aspx.designer.cs">
       <DependentUpon>content.aspx</DependentUpon>
     </Compile>
+    <Compile Include="pages\instructor\quiz-editor.aspx.cs">
+      <DependentUpon>quiz-editor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\instructor\quiz-editor.aspx.designer.cs">
+      <DependentUpon>quiz-editor.aspx</DependentUpon>
+    </Compile>
     <Compile Include="pages\member\dashboard.aspx.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="pages\member\dashboard.aspx.designer.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\member\flashcard-list.aspx.cs">
+      <DependentUpon>flashcard-list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\member\flashcard-list.aspx.designer.cs">
+      <DependentUpon>flashcard-list.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\member\flashcards.aspx.cs">
       <DependentUpon>flashcards.aspx</DependentUpon>
@@ -264,6 +281,13 @@
     </Compile>
     <Compile Include="pages\member\profile.aspx.designer.cs">
       <DependentUpon>profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\member\quiz.aspx.cs">
+      <DependentUpon>quiz.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\member\quiz.aspx.designer.cs">
+      <DependentUpon>quiz.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\member\quizzes.aspx.cs">
       <DependentUpon>quizzes.aspx</DependentUpon>
@@ -369,16 +393,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
-          <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>64507</DevelopmentServerPort>
-          <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44316/</IISUrl>
-          <NTLMAuthentication>False</NTLMAuthentication>
-          <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl>
-          </CustomServerUrl>
-          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
     </VisualStudio>

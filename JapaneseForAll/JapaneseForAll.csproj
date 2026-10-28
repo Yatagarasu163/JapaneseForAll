@@ -134,7 +134,10 @@
     <Content Include="pages\components\Navbar.ascx" />
     <Content Include="pages\components\AdminNavbar.ascx" />
     <Content Include="pages\instructor\content.aspx" />
+    <Content Include="pages\instructor\forum.aspx" />
+    <Content Include="pages\instructor\new-topic.aspx" />
     <Content Include="pages\instructor\quiz-editor.aspx" />
+    <Content Include="pages\instructor\thread.aspx" />
     <Content Include="pages\member\dashboard.aspx" />
     <Content Include="pages\member\flashcard-list.aspx" />
     <Content Include="pages\member\flashcards.aspx" />
@@ -143,6 +146,7 @@
     <Content Include="pages\member\profile.aspx" />
     <Content Include="pages\member\quiz.aspx" />
     <Content Include="pages\member\quizzes.aspx" />
+    <Content Include="pages\member\result.aspx" />
     <Content Include="pages\member\thread.aspx" />
     <Content Include="pages\publics\register.aspx" />
     <Content Include="pages\publics\quizzes.aspx" />
@@ -265,12 +269,33 @@
     <Compile Include="pages\instructor\content.aspx.designer.cs">
       <DependentUpon>content.aspx</DependentUpon>
     </Compile>
+    <Compile Include="pages\instructor\forum.aspx.cs">
+      <DependentUpon>forum.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\instructor\forum.aspx.designer.cs">
+      <DependentUpon>forum.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\instructor\new-topic.aspx.cs">
+      <DependentUpon>new-topic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\instructor\new-topic.aspx.designer.cs">
+      <DependentUpon>new-topic.aspx</DependentUpon>
+    </Compile>
     <Compile Include="pages\instructor\quiz-editor.aspx.cs">
       <DependentUpon>quiz-editor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="pages\instructor\quiz-editor.aspx.designer.cs">
       <DependentUpon>quiz-editor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\instructor\thread.aspx.cs">
+      <DependentUpon>thread.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\instructor\thread.aspx.designer.cs">
+      <DependentUpon>thread.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\member\dashboard.aspx.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>
@@ -327,6 +352,13 @@
     </Compile>
     <Compile Include="pages\member\quizzes.aspx.designer.cs">
       <DependentUpon>quizzes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\member\result.aspx.cs">
+      <DependentUpon>result.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\member\result.aspx.designer.cs">
+      <DependentUpon>result.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\member\thread.aspx.cs">
       <DependentUpon>thread.aspx</DependentUpon>

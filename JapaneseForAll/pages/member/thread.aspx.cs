@@ -16,6 +16,7 @@ namespace JapaneseForAll.pages.member
         public class threadDetails
         {
             public string title { get; set; }
+            public string description { get; set; }
             public string author { get; set; }
             public DateTime Timestamp { get; set; }
         }
@@ -49,7 +50,8 @@ namespace JapaneseForAll.pages.member
                 {
                     string query = @"SELECT
                                     T.TITLE,
-                                    U.FNAME + ' ' + U.MNAME + ' ' + U.LNAME AS AUTHOR,
+                                    T.DESCRIPTION,
+                                    CONCAT_WS(' ', U.FNAME, NULLIF(U.MNAME, ''), U.LNAME) AS AUTHOR,
                                     T.TIMESTAMP AS Timestamp
                                 FROM THREADTABLE T
                                 INNER JOIN USERTABLE U ON T.USER_ID = U.USER_ID
@@ -67,6 +69,7 @@ namespace JapaneseForAll.pages.member
                         while (dr.Read())
                         {
                             details.title = dr["TITLE"].ToString();
+                            details.description = dr["DESCRIPTION"].ToString();
                             details.author = dr["AUTHOR"].ToString();
                             details.Timestamp = Convert.ToDateTime(dr["TIMESTAMP"]);
                         }
@@ -81,7 +84,7 @@ namespace JapaneseForAll.pages.member
                     query = @"
                     SELECT
                         R.USER_ID AS UserId,
-                        U.FNAME + ' ' + U.MNAME + ' ' + U.LNAME AS Author,
+                        CONCAT_WS(' ', U.FNAME, NULLIF(U.MNAME, ''), U.LNAME) AS Author,
                         R.CONTENT AS Message,
                         R.TIMESTAMP AS Timestamp,
                         U.ROLE AS Role

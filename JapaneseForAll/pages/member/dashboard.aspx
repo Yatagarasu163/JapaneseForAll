@@ -21,25 +21,40 @@
             <div class="panel">
                 <h2>Welcome back, <asp:Label runat="server" ID="fname2"></asp:Label> 👋</h2>
                 <div class="grid3">
-                <div class="card stat"><span class="mut">Modules Completed</span><b>12 / 30</b><span class="mut sm">+2 this week</span></div>
-                <div class="card stat"><span class="mut">Average Quiz Score</span><b>86%</b><span class="mut sm">↑ 4% improvement</span></div>
-                <div class="card stat"><span class="mut">Forum Posts</span><b>4</b><span class="mut sm">2 new replies</span></div>
+                    <div class="card stat">
+                        <span class="mut">Quizzes Completed</span>
+                        <b><asp:Label ID="completedModules" runat="server" /></b>
+                    </div>
+
+                    <div class="card stat">
+                        <span class="mut">Average Quiz Score</span>
+                        <b><asp:Label ID="quizAverage" runat="server" /></b>
+                    </div>
+
+                    <div class="card stat">
+                        <span class="mut">Forum Posts</span>
+                        <b><asp:Label ID="forumPosts" runat="server" /></b>
+                    </div>
                 </div>
 
-                <h3>Continue Learning</h3>
-                <div class="grid3">
-                <!-- REPEAT: one card per in-progress item -->
-                <a class="card" href="flashcards.html"><span class="lvl N5">N5</span> <b>Basic Greetings</b><p class="mut">Flashcards 60% complete</p></a>
-                <a class="card" href="quiz.html"><span class="lvl N5">N5</span> <b>Numbers &amp; Counting</b><p class="mut">Quiz · Not started</p></a>
-                <a class="card" href="flashcards.html"><span class="lvl N4">N4</span> <b>Daily Conversations</b><p class="mut">Flashcards 20% complete</p></a>
-                </div>
+                <h3>Flashcards</h3>
+                <asp:Repeater ID="flashcardRepeater" runat="server">
+                    <ItemTemplate>
+                        <div class="card">
+                            <span class="mut sm"><h3><%# Eval("FlashcardTitle") %></h3><a class="lk" href='flashcards.aspx?id=<%# Eval("FlashcardID") %>'>Start lesson →</a></span>
+                        </div>
+                    </ItemTemplate>
+                </asp:Repeater>
             
-                <h3>Recommended for you</h3>
+                <h3>Quizzes</h3>
                 <div class="grid3">
-                <!-- REPEAT: one card per recommendation -->
-                <div class="card"><span class="mut sm">Flashcards</span><h3>N5 Weather &amp; Seasons</h3><a class="lk" href="flashcards.html">Start lesson →</a></div>
-                <div class="card"><span class="mut sm">Quiz</span><h3>N5 Shopping Phrases</h3><a class="lk" href="quiz.html">Start lesson →</a></div>
-                <div class="card"><span class="mut sm">Flashcards</span><h3>N4 Train Station Talk</h3><a class="lk" href="flashcards.html">Start lesson →</a></div>
+                    <asp:Repeater ID="quizRepeater" runat="server">
+                        <ItemTemplate>
+                            <div class="card">
+                                <span class="mut sm"><h3><%# Eval("QuizTitle") %></h3><a class="lk" href='quiz.aspx?id=<%# Eval("QuizID") %>'>Start lesson →</a></span>
+                            </div>
+                        </ItemTemplate>
+                    </asp:Repeater>
                 </div>
             </div>
         </main>

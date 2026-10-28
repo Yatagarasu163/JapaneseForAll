@@ -56,17 +56,15 @@ namespace JapaneseForAll.pages.member
                     FROM QUIZTABLE q
                     WHERE q.STATUS = 'PUBLISHED'";
 
-                    if (!string.IsNullOrEmpty(level))
-                    {
-                        query += " AND LEVEL = @LEVEL";
-                    }
-
                     SqlCommand cmd = new SqlCommand(query, con);
 
                     if (!string.IsNullOrEmpty(level))
                     {
                         query += " AND q.LEVEL = @LEVEL";
+                        cmd.Parameters.AddWithValue("@LEVEL", level);
                     }
+
+                    
 
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
 

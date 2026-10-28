@@ -25,6 +25,14 @@ namespace JapaneseForAll.pages.member
             public string AnswerText { get; set; }
         }
 
+        public class AnswerResult
+        {
+            public int QuestionId {  get; set; }
+            public string SelectedAnswer { get; set; }
+            public string CorrectAnswer { get; set; }
+            public bool IsCorrect {  get; set; }
+        }
+
         private int quizId;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -134,87 +142,187 @@ namespace JapaneseForAll.pages.member
 
         protected void submitQuiz_Click(object sender, EventArgs e)
         {
-
             errMsg.Visible = false;
 
+            // Get the quiz ID from the URL.
+            if (!int.TryParse(Request.QueryString["id"], out int quizId))
+            {
+                Response.Redirect("~/pages/member/quizzes.aspx");
+                return;
+            }
+
+            int userId = Convert.ToInt32(Session["uid"]);
+
+            List<AnswerResult> answerResults = new List<AnswerResult>();
+
+            int score = 0;
+            int total = 0;
+
+            // Validate that every question has been answered.
             foreach (RepeaterItem item in questionRepeater.Items)
             {
-                RadioButtonList answerList = (RadioButtonList)item.FindControl("answerList");
+                RadioButtonList answerList =
+                    (RadioButtonList)item.FindControl("answerList");
 
                 if (string.IsNullOrEmpty(answerList.SelectedValue))
                 {
                     errMsg.Visible = true;
                     errMsg.ForeColor = System.Drawing.Color.Red;
                     errMsg.Text = "Please answer every question before submitting.";
-
                     return;
                 }
             }
 
+            string connectionString =
+                ConfigurationManager.ConnectionStrings["JPDB"].ConnectionString;
 
-            int score = 0;
-            int total = 0;
-
-            string query = "";
-
-            foreach (RepeaterItem item in questionRepeater.Items)
+            // Collect the selected and correct answers.
+            using (SqlConnection con = new SqlConnection(connectionString))
             {
-                HiddenField questionIdField = (HiddenField)item.FindControl("questionId");
+                con.Open();
 
-                RadioButtonList answerList = (RadioButtonList)item.FindControl("answerList");
-
-                int questionId = Convert.ToInt32(questionIdField.Value);
-
-                if (string.IsNullOrEmpty(answerList.SelectedValue))
+                foreach (RepeaterItem item in questionRepeater.Items)
                 {
-                    continue;
-                }
+                    HiddenField questionIdField =
+                        (HiddenField)item.FindControl("questionId");
 
-                string selectedAnswer = answerList.SelectedValue;
+                    RadioButtonList answerList =
+                        (RadioButtonList)item.FindControl("answerList");
 
-                query = @"SELECT CORRECT_ANSWER FROM QUESTIONTABLE WHERE QUESTION_ID = @QuestionID";
+                    int questionId = Convert.ToInt32(questionIdField.Value);
+                    string selectedAnswer = answerList.SelectedValue;
 
-                using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["JPDB"].ConnectionString))
-                {
+                    string query = @"
+                SELECT CORRECT_ANSWER
+                FROM QUESTIONTABLE
+                WHERE QUESTION_ID = @QuestionID
+                  AND QUIZ_ID = @QuizID";
+
                     using (SqlCommand cmd = new SqlCommand(query, con))
                     {
                         cmd.Parameters.AddWithValue("@QuestionID", questionId);
-
-                        con.Open();
+                        cmd.Parameters.AddWithValue("@QuizID", quizId);
 
                         object result = cmd.ExecuteScalar();
 
-                        if (result != null)
+                        if (result == null || result == DBNull.Value)
                         {
-                            total++;
+                            throw new Exception(
+                                "Could not find question " + questionId +
+                                " for quiz " + quizId + ".");
+                        }
 
-                            if (string.Equals(selectedAnswer, result.ToString(), StringComparison.Ordinal))
-                            {
-                                score++;
-                            }
+                        string correctAnswer = result.ToString();
+
+                        bool isCorrect = string.Equals(
+                            selectedAnswer,
+                            correctAnswer,
+                            StringComparison.Ordinal);
+
+                        answerResults.Add(new AnswerResult
+                        {
+                            QuestionId = questionId,
+                            SelectedAnswer = selectedAnswer,
+                            CorrectAnswer = correctAnswer,
+                            IsCorrect = isCorrect
+                        });
+
+                        total++;
+
+                        if (isCorrect)
+                        {
+                            score++;
                         }
                     }
                 }
             }
 
-            query = @"INSERT INTO RESULTTABLE (USER_ID, QUIZ_ID, SCORE, TOTAL_QUESTIONS) VALUES (@UserID, @QuizID, @Score, @TotalQuestions)";
-
-            using(SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["JPDB"].ConnectionString))
+            // Save the overall result and its details atomically.
+            using (SqlConnection con = new SqlConnection(connectionString))
             {
-                using(SqlCommand cmd = new SqlCommand(query, con))
-                {
-                    cmd.Parameters.AddWithValue("@UserID", Convert.ToInt32(Session["uid"]));
-                    cmd.Parameters.AddWithValue("@QuizID", quizId);
-                    cmd.Parameters.AddWithValue("@Score", score);
-                    cmd.Parameters.AddWithValue("@TotalQuestions", total);
+                con.Open();
 
-                    con.Open();
-                    cmd.ExecuteNonQuery();
-                    con.Close();
+                using (SqlTransaction transaction = con.BeginTransaction())
+                {
+                    try
+                    {
+                        int resultId;
+
+                        string resultQuery = @"
+                    INSERT INTO RESULTTABLE
+                        (USER_ID, QUIZ_ID, SCORE, TOTAL_QUESTIONS)
+                    VALUES
+                        (@UserID, @QuizID, @Score, @TotalQuestions);
+
+                    SELECT CAST(SCOPE_IDENTITY() AS INT);";
+
+                        using (SqlCommand cmd =
+                            new SqlCommand(resultQuery, con, transaction))
+                        {
+                            cmd.Parameters.AddWithValue("@UserID", userId);
+                            cmd.Parameters.AddWithValue("@QuizID", quizId);
+                            cmd.Parameters.AddWithValue("@Score", score);
+                            cmd.Parameters.AddWithValue("@TotalQuestions", total);
+
+                            resultId = (int)cmd.ExecuteScalar();
+                        }
+
+                        string detailQuery = @"
+                    INSERT INTO RESULTDETAILTABLE
+                    (
+                        RESULT_ID,
+                        QUESTION_ID,
+                        SELECTED_ANSWER,
+                        CORRECT_ANSWER,
+                        IS_ANSWERED,
+                        IS_CORRECT
+                    )
+                    VALUES
+                    (
+                        @ResultID,
+                        @QuestionID,
+                        @SelectedAnswer,
+                        @CorrectAnswer,
+                        @IsAnswered,
+                        @IsCorrect
+                    )";
+
+                        foreach (AnswerResult answer in answerResults)
+                        {
+                            using (SqlCommand cmd =
+                                new SqlCommand(detailQuery, con, transaction))
+                            {
+                                cmd.Parameters.AddWithValue("@ResultID", resultId);
+                                cmd.Parameters.AddWithValue(
+                                    "@QuestionID", answer.QuestionId);
+                                cmd.Parameters.AddWithValue(
+                                    "@SelectedAnswer", answer.SelectedAnswer);
+                                cmd.Parameters.AddWithValue(
+                                    "@CorrectAnswer", answer.CorrectAnswer);
+                                cmd.Parameters.AddWithValue("@IsAnswered", true);
+                                cmd.Parameters.AddWithValue(
+                                    "@IsCorrect", answer.IsCorrect);
+
+                                cmd.ExecuteNonQuery();
+                            }
+                        }
+
+                        transaction.Commit();
+
+                        // Open the result page for this specific attempt.
+                        Response.Redirect(
+                            "~/pages/member/result.aspx?resultId=" + resultId,
+                            false);
+
+                        Context.ApplicationInstance.CompleteRequest();
+                    }
+                    catch
+                    {
+                        transaction.Rollback();
+                        throw;
+                    }
                 }
             }
-
-            Response.Redirect("~/pages/member/quizzes.aspx");
         }
     }
 }

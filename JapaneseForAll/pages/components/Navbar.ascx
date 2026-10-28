@@ -7,6 +7,7 @@
             <nav>
                 <asp:HyperLink runat="server" ID="lnkMemberDashboard" CssClass="" Text="Home" NavigateUrl="~/pages/member/dashboard.aspx"/>
                 <asp:HyperLink runat="server" ID="lnkQuizzes" Text="Quiz"  NavigateUrl="~/pages/member/quizzes.aspx"/>
+                <asp:HyperLink runat="server" ID="lnkFlashcards" Text ="Flashcards" NavigateUrl="~/pages/member/flashcard-list.aspx" />
                 <asp:HyperLink runat="server" ID="lnkForum" Text="Forum" NavigateUrl="~/pages/member/forum.aspx"/>
                 <asp:HyperLink runat="server" ID="lnkProfile" Text="Profile" NavigateUrl="~/pages/member/profile.aspx"/>
 

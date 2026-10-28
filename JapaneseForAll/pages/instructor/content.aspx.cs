@@ -34,26 +34,26 @@ namespace JapaneseForAll.pages.instructor
                 {
 
                     string query = @"
-SELECT
-    F.FLASHCARD_ID AS ModuleId,
-    F.TITLE AS Title,
-    'Flashcards' AS Type,
-    F.LEVEL AS Level,
-    F.STATUS AS Status,
-    F.DESCRIPTION AS Description,
-    COUNT(C.CARD_ID) AS CardCount
-FROM dbo.FLASHCARDTABLE F
-LEFT JOIN dbo.CARD_TABLE C
-    ON C.FLASHCARD_ID = F.FLASHCARD_ID
-WHERE F.STATUS <> 'DELETED'
-GROUP BY
-    F.FLASHCARD_ID,
-    F.TITLE,
-    F.LEVEL,
-    F.STATUS,
-    F.DESCRIPTION
-ORDER BY F.TITLE;
-";
+                        SELECT
+                            F.FLASHCARD_ID AS ModuleId,
+                            F.TITLE AS Title,
+                            'Flashcards' AS Type,
+                            F.LEVEL AS Level,
+                            F.STATUS AS Status,
+                            F.DESCRIPTION AS Description,
+                            COUNT(C.CARD_ID) AS CardCount
+                        FROM dbo.FLASHCARDTABLE F
+                        LEFT JOIN dbo.CARDTABLE C
+                            ON C.FLASHCARD_ID = F.FLASHCARD_ID
+                        WHERE F.STATUS <> 'DELETED'
+                        GROUP BY
+                            F.FLASHCARD_ID,
+                            F.TITLE,
+                            F.LEVEL,
+                            F.STATUS,
+                            F.DESCRIPTION
+                        ORDER BY F.TITLE;
+                        ";
 
                     using (SqlCommand cmd = new SqlCommand(query, con))
                     {

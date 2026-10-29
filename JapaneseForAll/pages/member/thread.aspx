@@ -24,6 +24,7 @@
                     <asp:Repeater ID="threadDetailsRepeater" runat="server">
                         <ItemTemplate>
                             <h2><%#: Eval("title") %></h2>
+                            <p><%#: Eval("description") %></p>
                             <p class="mut">Started by <%#: Eval("author") %> · <%#: Eval("Timestamp", "{0:dd MMM yyyy, hh:mm tt}") %></p>
                         </ItemTemplate>
 

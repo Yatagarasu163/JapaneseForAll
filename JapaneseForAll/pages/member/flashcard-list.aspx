@@ -45,7 +45,7 @@
                         </p>
 
                         <a class="btn sm"
-                           href='flashcard.aspx?id=<%# Eval("FlashcardId") %>'>
+                           href='flashcards.aspx?id=<%# Eval("FlashcardId") %>'>
                             Start →
                         </a>
                     </div>

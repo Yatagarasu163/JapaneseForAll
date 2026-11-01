@@ -12,8 +12,6 @@ namespace JapaneseForAll.pages.admin
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
-        protected System.Web.UI.WebControls.Repeater RptUsers;
-
         protected void Page_Load(object sender, EventArgs e)
         {
             // 1. Security Check
@@ -26,7 +24,7 @@ namespace JapaneseForAll.pages.admin
             if (!IsPostBack)
             {
                 LoadDashboardStats();
-                BindUserTable(); 
+                BindUserTable();
             }
         }
 
@@ -37,6 +35,8 @@ namespace JapaneseForAll.pages.admin
             using (SqlConnection conn = new SqlConnection(connString))
             {
                 conn.Open();
+
+                // Total Users Count
                 string totalQuery = "SELECT COUNT(*) FROM USERTABLE";
                 int totalUsers = 0;
                 using (SqlCommand cmd = new SqlCommand(totalQuery, conn))
@@ -45,13 +45,15 @@ namespace JapaneseForAll.pages.admin
                     TotalUsers.InnerText = totalUsers.ToString();
                 }
 
-                string statusQuery = "SELECT COUNT(*) FROM USERTABLE WHERE CERTIFICATE = 'Pending'";
+                // Pending Instructor Certificates Count (case-insensitive check)
+                string statusQuery = "SELECT COUNT(*) FROM USERTABLE WHERE UPPER(ROLE) = 'INSTRUCTOR' AND UPPER(STATUS) = 'PENDING'";
                 using (SqlCommand cmd = new SqlCommand(statusQuery, conn))
                 {
                     int totalPending = (int)cmd.ExecuteScalar();
                     Status.InnerText = totalPending.ToString();
                 }
 
+                // Active Users Count
                 string activeQuery = "SELECT COUNT(*) FROM USERTABLE WHERE STATUS = 'ACTIVE'";
                 int totalActive = 0;
                 using (SqlCommand cmd = new SqlCommand(activeQuery, conn))
@@ -60,6 +62,7 @@ namespace JapaneseForAll.pages.admin
                     Active.InnerText = totalActive.ToString();
                 }
 
+                // Active Percentage Calculation
                 if (totalUsers > 0)
                 {
                     double percentage = ((double)totalActive / totalUsers) * 100;
@@ -72,7 +75,6 @@ namespace JapaneseForAll.pages.admin
             }
         }
 
-        
         private void BindUserTable()
         {
             string connString = ConfigurationManager.ConnectionStrings["JPDB"].ConnectionString;
@@ -88,7 +90,7 @@ namespace JapaneseForAll.pages.admin
                         DataTable dt = new DataTable();
                         sda.Fill(dt);
 
-                        // Binds the database rows to your ASP:Repeater control in the HTML
+                        // Binds the database rows to your ASP:Repeater control
                         RepeatUsers.DataSource = dt;
                         RepeatUsers.DataBind();
                     }
@@ -96,7 +98,7 @@ namespace JapaneseForAll.pages.admin
             }
         }
 
-        protected void BtnDelete(object sender, CommandEventArgs e)
+        protected void BtnDelete(object sender, RepeaterCommandEventArgs e)
         {
             if (e.CommandName == "DeleteUser")
             {
@@ -107,7 +109,7 @@ namespace JapaneseForAll.pages.admin
                 {
                     conn.Open();
 
-                    //delete replies
+                    // Delete related replies first
                     string deleteReplies = "DELETE FROM REPLYTABLE WHERE THREAD_ID IN (SELECT THREAD_ID FROM THREADTABLE WHERE USER_ID = @Id)";
                     using (SqlCommand cmdReplies = new SqlCommand(deleteReplies, conn))
                     {
@@ -115,7 +117,7 @@ namespace JapaneseForAll.pages.admin
                         cmdReplies.ExecuteNonQuery();
                     }
 
-                    // Step 1: Delete their posts/threads first so the database doesn't block us
+                    // Delete related threads/posts
                     string deleteThreads = "DELETE FROM THREADTABLE WHERE USER_ID = @Id";
                     using (SqlCommand cmdThreads = new SqlCommand(deleteThreads, conn))
                     {
@@ -123,7 +125,7 @@ namespace JapaneseForAll.pages.admin
                         cmdThreads.ExecuteNonQuery();
                     }
 
-                    // Step 2: Now delete the user safely
+                    // Delete the user safely
                     string deleteUser = "DELETE FROM USERTABLE WHERE USER_ID = @Id";
                     using (SqlCommand cmdUser = new SqlCommand(deleteUser, conn))
                     {
@@ -132,8 +134,9 @@ namespace JapaneseForAll.pages.admin
                     }
                 }
 
-                // Refresh the table so the user disappears from the screen
+                // Refresh the table and stats
                 BindUserTable();
+                LoadDashboardStats();
             }
         }
     }

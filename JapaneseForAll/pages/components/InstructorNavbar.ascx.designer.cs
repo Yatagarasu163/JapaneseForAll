@@ -15,22 +15,31 @@ namespace JapaneseForAll.pages.components
     {
 
         /// <summary>
-        /// fname control.
+        /// fname1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label fname;
+        protected global::System.Web.UI.WebControls.Label fname1;
 
         /// <summary>
-        /// initials control.
+        /// initial control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label initials;
+        protected global::System.Web.UI.WebControls.Label initial;
+
+        /// <summary>
+        /// photo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image photo;
 
         /// <summary>
         /// LogOut control.

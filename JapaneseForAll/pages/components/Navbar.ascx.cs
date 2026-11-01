@@ -16,7 +16,18 @@ namespace JapaneseForAll.pages.components
                 if (Session["fname"] == null) { Response.Redirect("~/pages/publics/login.aspx"); }
 
                 fname1.Text = Session["fname"].ToString();
-                initial.Text = Session["fname"].ToString().Substring(0, 1).ToUpper();
+                string photoPath = Session["photo"] as string;
+
+                if (!string.IsNullOrEmpty(photoPath))
+                {
+                    photo.ImageUrl = photoPath;     // e.g. ~/uploads/profiles/abc123.jpg (the ~/ is resolved for you)
+                    photo.Visible = true;
+                    initial.Visible = false;
+                }
+                else
+                {
+                    initial.Text = Session["fname"].ToString().Substring(0, 1).ToUpper();
+                }
             }
 
         }

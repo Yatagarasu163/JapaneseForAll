@@ -77,6 +77,13 @@
                         <label class="chip"><asp:RadioButton runat="server" ID="genderOther" GroupName="gender" Text="" /><span>Other</span></label>
                         </div>
 
+                <div class="profile-photo-group">
+                 <label>Profile Photo (optional)<asp:FileUpload runat="server" ID="photo" accept=".jpg,.jpeg,image/jpeg,.png" /></label>
+<small class="mut">JPG / JPEG only, max 2 MB. If you skip this, your initial is shown instead.</small>
+<asp:CustomValidator ID="photoValidator" runat="server" Text="*" ForeColor="Red" ValidationGroup="Register" OnServerValidate="photoValidator_ServerValidate" />
+                    </div>
+
+
                         <div class="cert">
                             <label>Teaching Certificate (Instructors only)<asp:FileUpload runat="server" ID="cert" Enabled="false" accept=".pdf" ClientIDMode="Static"/></label>
                             <small class="mut">⬆ Upload PDF (max 5MB)</small>

@@ -7,6 +7,17 @@
 .lk{background:none;border:0;color:var(--red);cursor:pointer;font:600 13px Inter,sans-serif;text-decoration:none;padding:0 4px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:var(--sh);text-decoration:none;color:inherit;display:block;transition:.15s}
 .card h3{margin:8px 0 2px}
+.card-img {
+    max-width: 100%;
+    height: auto;
+    max-height: 150px;
+    object-fit: contain;
+    border-radius: 6px;
+    margin-bottom: 0.75rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 .top{display:flex;justify-content:space-between}
 .mut{color:var(--mut)}
 .sm{font-size:12px}

@@ -38,8 +38,14 @@ a.fb{text-decoration:none}
 .flip:has(input:checked) .back{display:flex}
 .flip:has(input:checked){background:var(--soft)}
 /* register: certificate upload only shows when "Instructor" is chosen */
-.reg .cert{display:none}
-.reg:has(#role-instructor:checked) .cert{display:block}
+.reg .cert {
+    display: none
+}
+
+.reg:has(#roleInstructor:checked) .cert {
+    display: block
+}
+
 .validation-summary {
     color: #b42318;
     background-color: #fef3f2;
@@ -64,4 +70,35 @@ a.fb{text-decoration:none}
     font-size: 14px;
     resize: vertical;
     box-sizing: border-box;
+}
+
+.chips input[type=radio] {
+    display: none
+}
+
+    .chips input[type=radio] + label {
+        display: inline-block;
+        margin: 0;
+        padding: 5px 14px;
+        border: 1.5px solid var(--line);
+        border-radius: 99px;
+        cursor: pointer;
+        font-size: 13px;
+        font-weight: 500;
+        background: var(--card);
+        color: var(--ink)
+    }
+
+    .chips input[type=radio]:checked + label {
+        background: var(--red);
+        border-color: var(--red);
+        color: #fff
+    }
+
+/* validation / save error message */
+.err {
+    display: block;
+    margin-top: 10px;
+    color: var(--bad);
+    font-weight: 600
 }

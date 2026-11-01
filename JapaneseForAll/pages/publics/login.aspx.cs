@@ -33,22 +33,26 @@ namespace JapaneseForAll
 
                     if (count > 0)
                     {
-                        SqlCommand cmdType = new SqlCommand("SELECT USER_ID, FNAME, ROLE FROM USERTABLE WHERE USERNAME=@username AND STATUS='ACTIVE'", con);
+                        SqlCommand cmdType = new SqlCommand("SELECT USER_ID, FNAME, ROLE, PROFILE_PHOTO FROM USERTABLE WHERE USERNAME=@username AND STATUS='ACTIVE'", con);
                         cmdType.Parameters.AddWithValue("@username", username.Text);
                         SqlDataReader dr = cmdType.ExecuteReader();
 
                         string role = "";
                         string name = "";
                         string uid = "";
+                        string photo = "";
 
                         while (dr.Read())
                         {
                             role = dr["ROLE"].ToString().Trim();
                             name = dr["FNAME"].ToString().Trim();
                             uid = dr["USER_ID"].ToString().Trim();
+                            photo = Convert.ToString(dr["PROFILE_PHOTO"]);   // empty string if the user has no photo
                         }
+                        dr.Close();
 
                         Session["fname"] = name;
+                        Session["photo"] = photo;
                         Session["uid"] = uid;
                         Session["role"] = role;
 

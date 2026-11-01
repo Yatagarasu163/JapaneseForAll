@@ -204,6 +204,24 @@ namespace JapaneseForAll.pages.publics
         protected global::System.Web.UI.WebControls.RadioButton genderOther;
 
         /// <summary>
+        /// photo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload photo;
+
+        /// <summary>
+        /// photoValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator photoValidator;
+
+        /// <summary>
         /// cert control.
         /// </summary>
         /// <remarks>

@@ -1,92 +1,96 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using System.Configuration;
-using System.Runtime.InteropServices;
+using System.Data.SqlClient;
+using System.Globalization;
 
 namespace JapaneseForAll.pages.member
 {
     public partial class flashcards : System.Web.UI.Page
     {
-
         public class Flashcard
         {
-            public int CardId {  get; set; }
+            public int CardId { get; set; }
             public string FrontText { get; set; }
             public string FrontRomaji { get; set; }
             public string BackText { get; set; }
             public string BackNote { get; set; }
+            public string ImagePath { get; set; }
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            int quizId = Convert.ToInt32(Request.QueryString["id"]);
+            // ?id=7  -> which flashcard set;  ?card=3 -> which card inside it (starts at 1)
+            int flashcardId;
+            if (!int.TryParse(Request.QueryString["id"], out flashcardId) || flashcardId < 1)
+            {
+                Response.Redirect("flashcard-list.aspx");
+                return;
+            }
 
-            int cardNumber = 1;
-
-            string quiz_title = "";
-
+            int cardNumber;
             if (!int.TryParse(Request.QueryString["card"], out cardNumber) || cardNumber < 1)
             {
                 cardNumber = 1;
             }
 
-            List<Flashcard> flashcards = new List<Flashcard>();
+            List<Flashcard> cards = new List<Flashcard>();
+            string setTitle = "";
 
-            string query = @"
-                SELECT CARD_ID, FRONT_TEXT, FRONT_ROMAJI, BACK_TEXT, BACK_NOTE
-                FROM FLASHCARDTABLE
-                WHERE QUIZ_ID = @quizId
-                ORDER BY CARD_ORDER";
             try
             {
-                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["JPDB"].ConnectionString);
-                con.Open();
-
-                SqlCommand cmd = new SqlCommand(query, con);
-                cmd.Parameters.AddWithValue("@quizId", quizId);
-                SqlDataReader dr = cmd.ExecuteReader();
-                while (dr.Read())
+                using (SqlConnection con = new SqlConnection(
+                    ConfigurationManager.ConnectionStrings["JPDB"].ConnectionString))
                 {
-                    flashcards.Add(new Flashcard
+                    con.Open();
+
+                    // the set's title (FLASHCARDTABLE, not QUIZTABLE)
+                    using (SqlCommand cmd = new SqlCommand(
+                        "SELECT TITLE FROM FLASHCARDTABLE WHERE FLASHCARD_ID = @FlashcardId", con))
                     {
-                        CardId = Convert.ToInt32(dr["CARD_ID"]),
-                        FrontText = dr["FRONT_TEXT"].ToString(),
-                        FrontRomaji = dr["FRONT_ROMAJI"].ToString(),
-                        BackText = dr["BACK_TEXT"].ToString(),
-                        BackNote = dr["BACK_NOTE"].ToString()
-                    });
+                        cmd.Parameters.AddWithValue("@FlashcardId", flashcardId);
+
+                        object result = cmd.ExecuteScalar();
+                        if (result != null)
+                            setTitle = result.ToString();
+                    }
+
+                    // the cards live in CARDTABLE and are linked by FLASHCARD_ID
+                    using (SqlCommand cmd = new SqlCommand(@"
+                        SELECT CARD_ID, FRONT_TEXT, FRONT_ROMAJI, BACK_TEXT, BACK_NOTE, [IMAGE]
+                        FROM CARDTABLE
+                        WHERE FLASHCARD_ID = @FlashcardId
+                        ORDER BY CARD_ID", con))
+                    {
+                        cmd.Parameters.AddWithValue("@FlashcardId", flashcardId);
+
+                        using (SqlDataReader dr = cmd.ExecuteReader())
+                        {
+                            while (dr.Read())
+                            {
+                                cards.Add(new Flashcard
+                                {
+                                    CardId = Convert.ToInt32(dr["CARD_ID"]),
+                                    FrontText = dr["FRONT_TEXT"].ToString(),
+                                    FrontRomaji = dr["FRONT_ROMAJI"].ToString(),
+                                    BackText = dr["BACK_TEXT"].ToString(),
+                                    BackNote = dr["BACK_NOTE"].ToString(),
+                                    ImagePath = dr["IMAGE"] != DBNull.Value ? dr["IMAGE"].ToString() : string.Empty
+                                });
+                            }
+                        }
+                    }
                 }
-
-                dr.Close();
-
-                query = "SELECT TITLE FROM QUIZTABLE WHERE QUIZ_ID = @quizId";
-                cmd = new SqlCommand(query, con);
-                dr = cmd.ExecuteReader();
-
-                while (dr.Read())
-                {
-                    quiz_title = dr["TITLE"].ToString();
-                }
-                dr.Close();
-
-                SqlCommand cmd1 = new SqlCommand();
-
-
-                con.Close();
-
-
-            } catch (Exception ex) {
-                System.Diagnostics.Trace.Write(ex.ToString());
+            }
+            catch (Exception ex)
+            {
+                // shows up in Visual Studio: View > Output > Show output from: Debug
+                System.Diagnostics.Debug.WriteLine("Loading flashcards failed: " + ex.ToString());
             }
 
-            if(flashcards.Count == 0)
+            if (cards.Count == 0)
             {
-                lblSetTitle.Text = "No flashcards available";
+                lblSetTitle.Text = string.IsNullOrEmpty(setTitle) ? "No flashcards available" : setTitle;
                 lblCardNumber.Text = "0";
                 lblTotalCards.Text = "0";
 
@@ -97,29 +101,38 @@ namespace JapaneseForAll.pages.member
                 return;
             }
 
-            if(cardNumber > flashcards.Count)
+            if (cardNumber > cards.Count)
             {
-                cardNumber = flashcards.Count;
+                cardNumber = cards.Count;
             }
 
-            Flashcard currentCard = flashcards[cardNumber - 1];
+            Flashcard currentCard = cards[cardNumber - 1];
 
             flashcardRepeater.DataSource = new List<Flashcard> { currentCard };
             flashcardRepeater.DataBind();
 
-            lblSetTitle.Text = quiz_title;
+            lblSetTitle.Text = setTitle;
             lblCardNumber.Text = cardNumber.ToString();
-            lblTotalCards.Text = flashcards.Count.ToString();
+            lblTotalCards.Text = cards.Count.ToString();
 
-            double progress = (double)cardNumber / flashcards.Count * 100;
-            progressBar.Style["width"] = progress + "%";
+            // InvariantCulture keeps the decimal point a "." on every PC (CSS needs "33.3%", not "33,3%")
+            double progress = (double)cardNumber / cards.Count * 100;
+            progressBar.Style["width"] = progress.ToString("0.#", CultureInfo.InvariantCulture) + "%";
 
-            lnkPrevious.NavigateUrl = "flashcards.aspx?id=" + quizId + "&card=" + Math.Min(flashcards.Count, cardNumber - 1);
-
-            lnkNext.NavigateUrl = "flashcards.aspx?id=" + quizId + "&card=" + Math.Min(flashcards.Count, cardNumber + 1);
-
+            lnkPrevious.NavigateUrl = "flashcards.aspx?id=" + flashcardId + "&card=" + Math.Max(1, cardNumber - 1);
             lnkPrevious.Enabled = cardNumber > 1;
-            lnkNext.Enabled = cardNumber < flashcards.Count; 
+
+            if (cardNumber == cards.Count)
+            {
+                // last card: the Next button becomes the Complete button
+                lnkNext.Text = "Complete ✓";
+                lnkNext.NavigateUrl = "flashcard-list.aspx";
+            }
+            else
+            {
+                lnkNext.Text = "Next Card →";
+                lnkNext.NavigateUrl = "flashcards.aspx?id=" + flashcardId + "&card=" + (cardNumber + 1);
+            }
         }
     }
 }

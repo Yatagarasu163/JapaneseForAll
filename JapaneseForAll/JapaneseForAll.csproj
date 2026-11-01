@@ -138,6 +138,7 @@
     <Content Include="pages\instructor\new-topic.aspx" />
     <Content Include="pages\instructor\quiz-editor.aspx" />
     <Content Include="pages\instructor\thread.aspx" />
+    <Content Include="pages\instructor\module-form.aspx" />
     <Content Include="pages\member\dashboard.aspx" />
     <Content Include="pages\member\flashcard-list.aspx" />
     <Content Include="pages\member\flashcards.aspx" />
@@ -296,6 +297,13 @@
     </Compile>
     <Compile Include="pages\instructor\thread.aspx.designer.cs">
       <DependentUpon>thread.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\instructor\module-form.aspx.cs">
+      <DependentUpon>module-form.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\instructor\module-form.aspx.designer.cs">
+      <DependentUpon>module-form.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\member\dashboard.aspx.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>

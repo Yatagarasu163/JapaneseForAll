@@ -8,7 +8,7 @@
     <head runat="server">
             <meta charset="utf-8"/>
             <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
-            <title>Quizzes · Japanese For All</title>
+            <title>Flashcards · Japanese For All</title>
             <link rel="stylesheet" href="../../css/base.css"/>
             <link rel="stylesheet" href="../../css/layout.css"/>
             <link rel="stylesheet" href="../../css/components.css"/>
@@ -33,25 +33,22 @@
 
                 <asp:Repeater ID="flashcardRepeater" runat="server">
                     <ItemTemplate> 
+                        <%-- The front and the back are SIBLINGS. Clicking the card (hidden checkbox) swaps them. --%>
                         <label class="flip">
                             <input type="checkbox" />
 
                             <span class="front">
-                                <span class="jp">
-                                    <%#: Eval("FrontText") %>
-                                </span>
+                                <asp:Image runat='server' ImageUrl='<%# Eval("ImagePath") %>'
+                                    Visible='<%# Eval("ImagePath") != DBNull.Value && !string.IsNullOrEmpty(Eval("ImagePath").ToString()) %>'
+                                    CssClass='card-img' />
 
-                                <span class="mut">
-                                    <%#: Eval("FrontRomaji")%>
-                                </span>
+                                <span class="jp"><%#: Eval("FrontText") %></span>
+                                <span class="mut"><%#: Eval("FrontRomaji") %></span>
+                            </span>
 
-                                <span class="back">
-                                    <%#: Eval("BackText") %>
-                                </span>
-
-                                <span class="mut">
-                                    <%#: Eval("BackNote") %>
-                                </span>
+                            <span class="back">
+                                <span class="jp"><%#: Eval("BackText") %></span>
+                                <span class="mut"><%#: Eval("BackNote") %></span>
                             </span>
                         </label>
                     </ItemTemplate>

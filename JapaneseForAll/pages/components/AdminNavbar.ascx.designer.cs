@@ -42,15 +42,6 @@ namespace JapaneseForAll.pages.components
         protected global::System.Web.UI.WebControls.HyperLink lnkVerification;
 
         /// <summary>
-        /// lnkUser control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink lnkUser;
-
-        /// <summary>
         /// fname1 control.
         /// </summary>
         /// <remarks>
@@ -67,6 +58,15 @@ namespace JapaneseForAll.pages.components
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label initial;
+
+        /// <summary>
+        /// photo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image photo;
 
         /// <summary>
         /// LogOutLink control.

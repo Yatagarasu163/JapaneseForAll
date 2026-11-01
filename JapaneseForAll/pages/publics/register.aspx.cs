@@ -57,11 +57,44 @@ namespace JapaneseForAll.pages.publics
                             gender = "Other";
                         }
 
+                        string photoPath = SaveProfilePhoto();
+
                         if (roleMember.Checked)
                         {
 
+                            string profilePicFolderPath = Server.MapPath("~/photo/");
+
+                            System.Diagnostics.Debug.WriteLine("Photo folder: " + profilePicFolderPath);
+
+                            if (!Directory.Exists(profilePicFolderPath))
+                            {
+                                Directory.CreateDirectory(profilePicFolderPath);
+                            }
+
+                            string profilePicPath = "";
+
+                            if (photo.HasFile)
+                            {
+                                string photoName = Path.GetFileName(photo.FileName);
+                                string fullPath = Path.Combine(profilePicFolderPath, photoName);
+
+                                System.Diagnostics.Debug.WriteLine("Uploaded filename: " + photoName);
+                                System.Diagnostics.Debug.WriteLine("Full save path: " + fullPath);
+
+                                photo.SaveAs(fullPath);
+
+                                profilePicPath = "~/photo/" + photoName;
+
+                                //certPath = "~/Certificates/" + cert.FileName.ToString();
+                                //cert.SaveAs(folderPath + Path.GetFileName(cert.FileName));
+                            }
+                            else
+                            {
+                                System.Diagnostics.Debug.WriteLine("No photo file was uploaded.");
+                            }
+
                             //Create a row for a member 
-                            string query1 = "INSERT INTO USERTABLE (FNAME, MNAME, LNAME, USERNAME, EMAIL, PASSWORD, GENDER, ROLE) VALUES (@fname, @mname, @lname, @username, @email, @password, @gender, @role) ";
+                            string query1 = "INSERT INTO USERTABLE (FNAME, MNAME, LNAME, USERNAME, EMAIL, PASSWORD, GENDER, ROLE, PROFILE_PHOTO) VALUES (@fname, @mname, @lname, @username, @email, @password, @gender, @role, @photo) ";
 
                             SqlCommand cmd2 = new SqlCommand(query1, con);
                             cmd2.Parameters.AddWithValue("@fname", fname.Text);
@@ -72,6 +105,7 @@ namespace JapaneseForAll.pages.publics
                             cmd2.Parameters.AddWithValue("@password", password.Text);
                             cmd2.Parameters.AddWithValue("@gender", gender);
                             cmd2.Parameters.AddWithValue("@role", "Member");
+                            cmd2.Parameters.AddWithValue("@photo", (object)photoPath ?? DBNull.Value);
                             cmd2.ExecuteNonQuery();
                             Response.Redirect("login.aspx");
                         }
@@ -107,10 +141,47 @@ namespace JapaneseForAll.pages.publics
                             {
                                 System.Diagnostics.Debug.WriteLine("No certificate file was uploaded.");
                             }
-                            
+
+
+                            string profilePicFolderPath = Server.MapPath("~/photo/");
+
+                            System.Diagnostics.Debug.WriteLine("Photo folder: " + profilePicFolderPath);
+
+                            if (!Directory.Exists(profilePicFolderPath))
+                            {
+                                Directory.CreateDirectory(profilePicFolderPath);
+                            }
+
+                            string profilePicPath = "";
+
+                            if (photo.HasFile)
+                            {
+                                string photoName = Path.GetFileName(photo.FileName);
+                                string fullPath = Path.Combine(profilePicFolderPath, photoName);
+
+                                System.Diagnostics.Debug.WriteLine("Uploaded filename: " + photoName);
+                                System.Diagnostics.Debug.WriteLine("Full save path: " + fullPath);
+
+                                photo.SaveAs(fullPath);
+
+                                profilePicPath = "~/photo/" + photoName;
+
+                                //certPath = "~/Certificates/" + cert.FileName.ToString();
+                                //cert.SaveAs(folderPath + Path.GetFileName(cert.FileName));
+                            }
+                            else
+                            {
+                                System.Diagnostics.Debug.WriteLine("No photo file was uploaded.");
+                            }
+
+
+
+
+
+
 
                             //Create a row for an instructor
-                            string query1 = "INSERT INTO USERTABLE(FNAME, MNAME, LNAME, USERNAME, EMAIL, PASSWORD, GENDER, ROLE, CERTIFICATE, STATUS) VALUES (@fname, @mname, @lname, @username, @email, @password, @gender, @role, @cert, 'PENDING') ";
+                            string query1 = "INSERT INTO USERTABLE(FNAME, MNAME, LNAME, USERNAME, EMAIL, PASSWORD, GENDER, ROLE, CERTIFICATE, STATUS, PROFILE_PHOTO) VALUES (@fname, @mname, @lname, @username, @email, @password, @gender, @role, @cert, 'PENDING', @photo) ";
                             SqlCommand cmd1 = new SqlCommand(query1, con);
                             cmd1.Parameters.AddWithValue("@fname", fname.Text);
                             cmd1.Parameters.AddWithValue("@mname", string.IsNullOrWhiteSpace(mname.Text) ? (object)DBNull.Value: mname.Text.Trim());
@@ -121,6 +192,7 @@ namespace JapaneseForAll.pages.publics
                             cmd1.Parameters.AddWithValue("@gender", gender);
                             cmd1.Parameters.AddWithValue("@role", "Instructor");
                             cmd1.Parameters.AddWithValue("@cert", certPath);
+                            cmd1.Parameters.AddWithValue("@photo", (object)profilePicPath ?? DBNull.Value);
                             cmd1.ExecuteNonQuery();
                             Response.Redirect("login.aspx");
                         }
@@ -148,5 +220,57 @@ namespace JapaneseForAll.pages.publics
                 args.IsValid = true;
             }
         }
-}
+
+
+        private const string PhotoFolder = "~/uploads/profiles/";
+        private const int MaxPhotoBytes = 50 * 1024 * 1024;   // 2 MB
+
+        // Returns an error message, or null if there is no photo / the photo is fine.
+        private string ValidatePhoto()
+        {
+            if (!photo.HasFile)
+                return null;                                   // the photo is optional
+
+            string ext = Path.GetExtension(photo.FileName).ToLowerInvariant();
+            if (ext != ".jpg" && ext != ".jpeg" &&  ext != ".png")
+                return "The profile photo must be a JPG or JPEG or PNG file.";
+
+            if (photo.PostedFile.ContentLength > MaxPhotoBytes)
+                return "The profile photo must be smaller than 50 MB.";
+
+            // a real JPEG always starts with the bytes FF D8 FF (this catches renamed files)
+            if (ext == ".jpeg")
+            {
+                byte[] header = new byte[3];
+                int read = photo.PostedFile.InputStream.Read(header, 0, 3);
+                photo.PostedFile.InputStream.Position = 0;
+                if (read < 3 || header[0] != 0xFF || header[1] != 0xD8 || header[2] != 0xFF)
+                    return "That file is not a valid JPEG image.";
+            }
+                return null;
+        }
+
+        protected void photoValidator_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            string error = ValidatePhoto();
+            args.IsValid = error == null;
+            if (error != null)
+                photoValidator.ErrorMessage = error;
+        }
+
+        // Saves the photo under a random name. Returns "~/uploads/profiles/xxxx.jpg", or null if none was chosen.
+        private string SaveProfilePhoto()
+        {
+            if (!photo.HasFile)
+                return null;
+
+            string folder = Server.MapPath(PhotoFolder);
+            Directory.CreateDirectory(folder);
+
+            string fileName = Guid.NewGuid().ToString("N") + ".jpg";
+            photo.SaveAs(Path.Combine(folder, fileName));
+
+            return PhotoFolder + fileName;
+        }
+    }
 }

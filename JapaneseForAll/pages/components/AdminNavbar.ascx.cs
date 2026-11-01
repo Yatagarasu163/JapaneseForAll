@@ -13,35 +13,34 @@ namespace JapaneseForAll.pages.components
         {
             if (!IsPostBack)
             {
+                if (Session["fname"] == null) { Response.Redirect("~/pages/publics/login.aspx"); }
 
-                // Checks whichever session variable is available
-                string displayName = "";
+                fname1.Text = Session["fname"].ToString();
+                string photoPath = Session["photo"] as string;
 
-                if (Session["fname"] != null)
+                if (!string.IsNullOrEmpty(photoPath))
                 {
-                    displayName = Session["fname"].ToString();
+                    photo.ImageUrl = photoPath;     // e.g. ~/uploads/profiles/abc123.jpg (the ~/ is resolved for you)
+                    photo.Visible = true;
+                    initial.Visible = false;
                 }
-                else if (Session["username"] != null)
+                else
                 {
-                    displayName = Session["username"].ToString();
-                }
-
-                if (!string.IsNullOrEmpty(displayName))
-                {
-                    // for name
-                    fname1.Text = displayName;
-
-                    // for circle
-                    initial.Text = displayName.Substring(0, 1).ToUpper();
+                    initial.Text = Session["fname"].ToString().Substring(0, 1).ToUpper();
                 }
             }
+
         }
 
         protected void LogOut_Click(object sender, EventArgs e)
         {
-            
             Session.Clear();
+            Session.Abandon();
+
             Response.Redirect("~/pages/publics/login.aspx");
+
+            return;
         }
     }
 }
+

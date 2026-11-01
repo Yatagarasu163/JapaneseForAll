@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Xml.Linq;
 
 namespace JapaneseForAll.pages.components
 {
@@ -15,12 +16,24 @@ namespace JapaneseForAll.pages.components
             {
                 if (Session["fname"] == null) { Response.Redirect("~/pages/publics/login.aspx"); }
 
-                fname.Text = Session["fname"].ToString();
-                initials.Text = Session["fname"].ToString().Substring(0, 1).ToUpper();
+                fname1.Text = Session["fname"].ToString();
+                string photoPath = Session["photo"] as string;
+
+                if (!string.IsNullOrEmpty(photoPath))
+                {
+                    photo.ImageUrl = photoPath;     // e.g. ~/uploads/profiles/abc123.jpg (the ~/ is resolved for you)
+                    photo.Visible = true;
+                    initial.Visible = false;
+                }
+                else
+                {
+                    initial.Text = Session["fname"].ToString().Substring(0, 1).ToUpper();
+                }
             }
+
         }
 
-        protected void OnLogOut_Click(object sender, EventArgs e)
+        protected void LogOut_Click(object sender, EventArgs e)
         {
             Session.Clear();
             Session.Abandon();

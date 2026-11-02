@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Web.UI;
 
 namespace JapaneseForAll.pages.member
@@ -149,10 +150,31 @@ namespace JapaneseForAll.pages.member
                         quizRepeater.DataBind();
                     }
                 }
-            }
 
-            // Flashcards are loaded separately once their completion
-            // tracking table and column names are confirmed.
+                // Flashcards are loaded separately once their completion
+                // tracking table and column names are confirmed.
+                // Load available flashcards.
+                string flashcardQuery = @"
+                SELECT
+                    FLASHCARD_ID AS FlashcardID,
+                    TITLE AS FlashcardTitle
+                FROM FLASHCARDTABLE
+                WHERE STATUS = 'PUBLISHED'
+                ORDER BY TITLE
+";
+
+                using (SqlCommand cmd = new SqlCommand(flashcardQuery, con))
+                {
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    {
+                        DataTable dt = new DataTable();
+                        adapter.Fill(dt);
+
+                        flashcardRepeater.DataSource = dt;
+                        flashcardRepeater.DataBind();
+                    }
+                }
+            }
         }
     }
 }

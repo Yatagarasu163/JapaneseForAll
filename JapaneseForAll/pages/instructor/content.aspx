@@ -20,7 +20,7 @@
         <main>
             <div class="panel">
                 <div class="row sp" style="margin:0">
-                <div><h2>Learning Content Management</h2><p class="mut">Create and manage flashcards, quizzes and audio visual modules</p></div>
+                <div><h2>Learning Content Management</h2><p class="mut">Create and manage flashcard modules</p></div>
                 <a class="btn" href="module-form.aspx">+ Create Content</a>
                 </div>
                 <div class="sc">

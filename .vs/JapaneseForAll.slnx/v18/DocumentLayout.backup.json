@@ -7,11 +7,11 @@
       "RelativeMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|solutionrelative:japaneseforall\\pages\\instructor\\content.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|d:\\japforall\\japaneseforall\\pages\\instructor\\content.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|D:\\JapForAll\\japaneseforall\\pages\\instructor\\content.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|solutionrelative:japaneseforall\\pages\\instructor\\content.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|d:\\japforall\\japaneseforall\\pages\\admin\\management.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|D:\\JapForAll\\japaneseforall\\pages\\admin\\management.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|solutionrelative:japaneseforall\\pages\\admin\\management.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
@@ -69,7 +69,6 @@
               "RelativeDocumentMoniker": "JapaneseForAll\\pages\\instructor\\content.aspx",
               "ToolTip": "D:\\JapForAll\\JapaneseForAll\\pages\\instructor\\content.aspx",
               "RelativeToolTip": "JapaneseForAll\\pages\\instructor\\content.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
               "WhenOpened": "2026-11-02T05:20:31.28Z",
               "EditorCaption": ""
@@ -82,7 +81,6 @@
               "RelativeDocumentMoniker": "JapaneseForAll\\pages\\admin\\management.aspx",
               "ToolTip": "D:\\JapForAll\\JapaneseForAll\\pages\\admin\\management.aspx",
               "RelativeToolTip": "JapaneseForAll\\pages\\admin\\management.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
               "WhenOpened": "2026-11-01T09:01:05.055Z",
               "EditorCaption": ""
@@ -95,7 +93,6 @@
               "RelativeDocumentMoniker": "JapaneseForAll\\pages\\admin\\EditUser.aspx",
               "ToolTip": "D:\\JapForAll\\JapaneseForAll\\pages\\admin\\EditUser.aspx",
               "RelativeToolTip": "JapaneseForAll\\pages\\admin\\EditUser.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
               "WhenOpened": "2026-11-01T09:01:00.047Z",
               "EditorCaption": ""

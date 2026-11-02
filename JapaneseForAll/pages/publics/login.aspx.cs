@@ -31,8 +31,7 @@ namespace JapaneseForAll
                 SELECT USER_ID, FNAME, ROLE, PROFILE_PHOTO, STATUS
                 FROM USERTABLE
                 WHERE USERNAME = @username
-                  AND PASSWORD = @password
-                  AND STATUS = 'ACTIVE'";
+                  AND PASSWORD = @password";
 
                         using (SqlCommand cmd = new SqlCommand(query, con))
                         {
@@ -54,7 +53,7 @@ namespace JapaneseForAll
                                         string verificationStatus =
                                             Convert.ToString(dr["STATUS"]).Trim();
 
-                                        if (verificationStatus != "VERIFIED")
+                                        if (verificationStatus != "ACTIVE")
                                         {
                                             errMsg.Visible = true;
                                             errMsg.ForeColor = System.Drawing.Color.Red;

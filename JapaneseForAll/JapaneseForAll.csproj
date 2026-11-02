@@ -136,6 +136,7 @@
     <Content Include="pages\instructor\content.aspx" />
     <Content Include="pages\instructor\forum.aspx" />
     <Content Include="pages\instructor\new-topic.aspx" />
+    <Content Include="pages\instructor\profile.aspx" />
     <Content Include="pages\instructor\quiz-editor.aspx" />
     <Content Include="pages\instructor\thread.aspx" />
     <Content Include="pages\instructor\module-form.aspx" />
@@ -283,6 +284,13 @@
     </Compile>
     <Compile Include="pages\instructor\new-topic.aspx.designer.cs">
       <DependentUpon>new-topic.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\instructor\profile.aspx.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\instructor\profile.aspx.designer.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\instructor\quiz-editor.aspx.cs">
       <DependentUpon>quiz-editor.aspx</DependentUpon>

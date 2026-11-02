@@ -4,7 +4,13 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+    <title>Dashboard · Japanese For All</title>
+    <link rel="stylesheet" href="../../css/base.css"/>
+    <link rel="stylesheet" href="../../css/layout.css"/>
+    <link rel="stylesheet" href="../../css/components.css"/>
+    <link rel="stylesheet" href="../../css/pages.css"/>
 </head>
 <body>
     <form id="form1" runat="server">

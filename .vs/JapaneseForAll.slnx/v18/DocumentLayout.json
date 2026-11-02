@@ -1,7 +1,20 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\NrAdI\\source\\repos\\JapaneseForAll\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|c:\\users\\nradi\\source\\repos\\japaneseforall\\japaneseforall\\pages\\member\\result.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|solutionrelative:japaneseforall\\pages\\member\\result.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|c:\\users\\nradi\\source\\repos\\japaneseforall\\japaneseforall\\pages\\member\\dashboard.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|solutionrelative:japaneseforall\\pages\\member\\dashboard.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|c:\\users\\nradi\\source\\repos\\japaneseforall\\japaneseforall\\pages\\member\\dashboard.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|solutionrelative:japaneseforall\\pages\\member\\dashboard.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,8 +22,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 249,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "result.aspx",
+              "DocumentMoniker": "C:\\Users\\NrAdI\\source\\repos\\JapaneseForAll\\JapaneseForAll\\pages\\member\\result.aspx",
+              "RelativeDocumentMoniker": "JapaneseForAll\\pages\\member\\result.aspx",
+              "ToolTip": "C:\\Users\\NrAdI\\source\\repos\\JapaneseForAll\\JapaneseForAll\\pages\\member\\result.aspx",
+              "RelativeToolTip": "JapaneseForAll\\pages\\member\\result.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-11-02T05:31:10.895Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
@@ -30,6 +56,32 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{74946827-37a0-11d2-a273-00c04f8ef4ff}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "dashboard.aspx",
+              "DocumentMoniker": "C:\\Users\\NrAdI\\source\\repos\\JapaneseForAll\\JapaneseForAll\\pages\\member\\dashboard.aspx",
+              "RelativeDocumentMoniker": "JapaneseForAll\\pages\\member\\dashboard.aspx",
+              "ToolTip": "C:\\Users\\NrAdI\\source\\repos\\JapaneseForAll\\JapaneseForAll\\pages\\member\\dashboard.aspx",
+              "RelativeToolTip": "JapaneseForAll\\pages\\member\\dashboard.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-11-02T05:27:15.431Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "dashboard.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\NrAdI\\source\\repos\\JapaneseForAll\\JapaneseForAll\\pages\\member\\dashboard.aspx.cs",
+              "RelativeDocumentMoniker": "JapaneseForAll\\pages\\member\\dashboard.aspx.cs",
+              "ToolTip": "C:\\Users\\NrAdI\\source\\repos\\JapaneseForAll\\JapaneseForAll\\pages\\member\\dashboard.aspx.cs",
+              "RelativeToolTip": "JapaneseForAll\\pages\\member\\dashboard.aspx.cs",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAcwIMAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-02T05:27:40.011Z",
+              "EditorCaption": ""
             }
           ]
         }

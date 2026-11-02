@@ -22,73 +22,87 @@ namespace JapaneseForAll
             {
                 try
                 {
-                    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["JPDB"].ConnectionString);
-                    con.Open();
-
-                    string query = "SELECT COUNT(*) FROM USERTABLE WHERE USERNAME = @username AND PASSWORD = @password AND STATUS = 'ACTIVE'";
-                    SqlCommand cmd = new SqlCommand(query, con);
-                    cmd.Parameters.AddWithValue("@username", username.Text);
-                    cmd.Parameters.AddWithValue("@password", password.Text);
-                    int count = Convert.ToInt32(cmd.ExecuteScalar().ToString());
-
-                    if (count > 0)
+                    using (SqlConnection con = new SqlConnection(
+                    ConfigurationManager.ConnectionStrings["JPDB"].ConnectionString))
                     {
-                        SqlCommand cmdType = new SqlCommand("SELECT USER_ID, FNAME, ROLE, PROFILE_PHOTO FROM USERTABLE WHERE USERNAME=@username AND STATUS='ACTIVE'", con);
-                        cmdType.Parameters.AddWithValue("@username", username.Text);
-                        SqlDataReader dr = cmdType.ExecuteReader();
+                        con.Open();
 
-                        string role = "";
-                        string name = "";
-                        string uid = "";
-                        string photo = "";
+                        string query = @"
+                SELECT USER_ID, FNAME, ROLE, PROFILE_PHOTO, STATUS
+                FROM USERTABLE
+                WHERE USERNAME = @username
+                  AND PASSWORD = @password
+                  AND STATUS = 'ACTIVE'";
 
-                        while (dr.Read())
+                        using (SqlCommand cmd = new SqlCommand(query, con))
                         {
-                            role = dr["ROLE"].ToString().Trim();
-                            name = dr["FNAME"].ToString().Trim();
-                            uid = dr["USER_ID"].ToString().Trim();
-                            photo = Convert.ToString(dr["PROFILE_PHOTO"]);   // empty string if the user has no photo
-                        }
-                        dr.Close();
+                            cmd.Parameters.AddWithValue("@username", username.Text);
+                            cmd.Parameters.AddWithValue("@password", password.Text);
 
-                        Session["fname"] = name;
-                        Session["photo"] = photo;
-                        Session["uid"] = uid;
-                        Session["role"] = role;
+                            using (SqlDataReader dr = cmd.ExecuteReader())
+                            {
+                                if (dr.Read())
+                                {
+                                    string role = dr["ROLE"].ToString().Trim();
+                                    string name = dr["FNAME"].ToString().Trim();
+                                    string uid = dr["USER_ID"].ToString().Trim();
+                                    string photo = Convert.ToString(dr["PROFILE_PHOTO"]);
 
-                        if (role == "Member")
-                        {
-                            Response.Redirect("../member/dashboard.aspx");
-                        } else if (role == "Instructor")
-                        {
-                            Response.Redirect("../instructor/content.aspx");
-                        } else if (role == "Admin")
-                        {
-                            Response.Redirect("../admin/management.aspx");
-                        }
-                        else
-                        {
-                            Response.Redirect("login.aspx");
+                                    // Check instructor verification
+                                    if (role == "Instructor")
+                                    {
+                                        string verificationStatus =
+                                            Convert.ToString(dr["STATUS"]).Trim();
+
+                                        if (verificationStatus != "VERIFIED")
+                                        {
+                                            errMsg.Visible = true;
+                                            errMsg.ForeColor = System.Drawing.Color.Red;
+                                            errMsg.Text = "Your instructor account has not been verified yet. Please wait for administrator approval.";
+                                            return;
+                                        }
+                                    }
+
+                                    Session["fname"] = name;
+                                    Session["photo"] = photo;
+                                    Session["uid"] = uid;
+                                    Session["role"] = role;
+
+                                    if (role == "Member")
+                                    {
+                                        Response.Redirect("../member/dashboard.aspx");
+                                    }
+                                    else if (role == "Instructor")
+                                    {
+                                        Response.Redirect("../instructor/content.aspx");
+                                    }
+                                    else if (role == "Admin")
+                                    {
+                                        Response.Redirect("../admin/management.aspx");
+                                    }
+                                    else
+                                    {
+                                        Response.Redirect("login.aspx");
+                                    }
+                                }
+                                else
+                                {
+                                    errMsg.Visible = true;
+                                    errMsg.ForeColor = System.Drawing.Color.Red;
+                                    errMsg.Text = "Username and password mismatch!";
+                                }
+                            }
                         }
                     }
-                    else
-                    {
-                        errMsg.Visible = true;
-                        errMsg.ForeColor = System.Drawing.Color.Red;
-                        errMsg.Text = "Username and password mismatch!";
-                        return;
-                    }
-
-                    con.Close();
-
                 }
                 catch (Exception ex)
                 {
                     errMsg.Visible = true;
                     errMsg.ForeColor = System.Drawing.Color.Red;
-                    errMsg.Text = "Login not successful!" + ex.ToString();
+                    errMsg.Text = "Login not successful! " + ex.Message;
                 }
             }
+
         }
     }
 }

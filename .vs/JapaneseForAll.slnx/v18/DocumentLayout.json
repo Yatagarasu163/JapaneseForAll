@@ -3,20 +3,16 @@
   "WorkspaceRootPath": "D:\\JapForAll\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|d:\\japforall\\japaneseforall\\pages\\instructor\\content.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|solutionrelative:japaneseforall\\pages\\instructor\\content.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|d:\\japforall\\japaneseforall\\pages\\member\\dashboard.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|solutionrelative:japaneseforall\\pages\\member\\dashboard.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|D:\\JapForAll\\japaneseforall\\pages\\instructor\\content.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|solutionrelative:japaneseforall\\pages\\instructor\\content.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|D:\\JapForAll\\japaneseforall\\pages\\publics\\login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|solutionrelative:japaneseforall\\pages\\publics\\login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|D:\\JapForAll\\japaneseforall\\pages\\admin\\management.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|solutionrelative:japaneseforall\\pages\\admin\\management.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|D:\\JapForAll\\japaneseforall\\pages\\admin\\edituser.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|solutionrelative:japaneseforall\\pages\\admin\\edituser.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|D:\\JapForAll\\japaneseforall\\pages\\member\\dashboard.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{2F34B9BB-6ADA-4308-B4EB-C0B5C65CDB46}|JapaneseForAll\\JapaneseForAll.csproj|solutionrelative:japaneseforall\\pages\\member\\dashboard.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     }
   ],
   "DocumentGroupContainers": [
@@ -51,50 +47,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "content.aspx.cs",
-              "DocumentMoniker": "D:\\JapForAll\\JapaneseForAll\\pages\\instructor\\content.aspx.cs",
-              "RelativeDocumentMoniker": "JapaneseForAll\\pages\\instructor\\content.aspx.cs",
-              "ToolTip": "D:\\JapForAll\\JapaneseForAll\\pages\\instructor\\content.aspx.cs",
-              "RelativeToolTip": "JapaneseForAll\\pages\\instructor\\content.aspx.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Title": "dashboard.aspx.cs",
+              "DocumentMoniker": "D:\\JapForAll\\JapaneseForAll\\pages\\member\\dashboard.aspx.cs",
+              "RelativeDocumentMoniker": "JapaneseForAll\\pages\\member\\dashboard.aspx.cs",
+              "ToolTip": "D:\\JapForAll\\JapaneseForAll\\pages\\member\\dashboard.aspx.cs",
+              "RelativeToolTip": "JapaneseForAll\\pages\\member\\dashboard.aspx.cs",
+              "ViewState": "AgIAAIoAAAAAAAAAAAAcwJ0AAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-02T05:20:37.459Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "content.aspx",
-              "DocumentMoniker": "D:\\JapForAll\\JapaneseForAll\\pages\\instructor\\content.aspx",
-              "RelativeDocumentMoniker": "JapaneseForAll\\pages\\instructor\\content.aspx",
-              "ToolTip": "D:\\JapForAll\\JapaneseForAll\\pages\\instructor\\content.aspx",
-              "RelativeToolTip": "JapaneseForAll\\pages\\instructor\\content.aspx",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2026-11-02T05:20:31.28Z",
+              "WhenOpened": "2026-11-02T05:57:57.673Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "management.aspx",
-              "DocumentMoniker": "D:\\JapForAll\\JapaneseForAll\\pages\\admin\\management.aspx",
-              "RelativeDocumentMoniker": "JapaneseForAll\\pages\\admin\\management.aspx",
-              "ToolTip": "D:\\JapForAll\\JapaneseForAll\\pages\\admin\\management.aspx",
-              "RelativeToolTip": "JapaneseForAll\\pages\\admin\\management.aspx",
+              "Title": "dashboard.aspx",
+              "DocumentMoniker": "D:\\JapForAll\\JapaneseForAll\\pages\\member\\dashboard.aspx",
+              "RelativeDocumentMoniker": "JapaneseForAll\\pages\\member\\dashboard.aspx",
+              "ToolTip": "D:\\JapForAll\\JapaneseForAll\\pages\\member\\dashboard.aspx",
+              "RelativeToolTip": "JapaneseForAll\\pages\\member\\dashboard.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2026-11-01T09:01:05.055Z",
+              "WhenOpened": "2026-11-02T05:57:57.832Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "EditUser.aspx",
-              "DocumentMoniker": "D:\\JapForAll\\JapaneseForAll\\pages\\admin\\EditUser.aspx",
-              "RelativeDocumentMoniker": "JapaneseForAll\\pages\\admin\\EditUser.aspx",
-              "ToolTip": "D:\\JapForAll\\JapaneseForAll\\pages\\admin\\EditUser.aspx",
-              "RelativeToolTip": "JapaneseForAll\\pages\\admin\\EditUser.aspx",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2026-11-01T09:01:00.047Z",
+              "DocumentIndex": 1,
+              "Title": "login.aspx.cs",
+              "DocumentMoniker": "D:\\JapForAll\\JapaneseForAll\\pages\\publics\\login.aspx.cs",
+              "RelativeDocumentMoniker": "JapaneseForAll\\pages\\publics\\login.aspx.cs",
+              "ToolTip": "D:\\JapForAll\\JapaneseForAll\\pages\\publics\\login.aspx.cs",
+              "RelativeToolTip": "JapaneseForAll\\pages\\publics\\login.aspx.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAcwEQAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-02T05:57:57.835Z",
               "EditorCaption": ""
             }
           ]

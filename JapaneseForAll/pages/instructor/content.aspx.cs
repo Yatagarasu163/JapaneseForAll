@@ -27,69 +27,76 @@ namespace JapaneseForAll.pages.instructor
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["fname"] == null) { Response.Redirect("~/pages/publics/login.aspx"); }
+            if (Session["fname"] == null)
+            {
+                Response.Redirect("~/pages/publics/login.aspx");
+                return;
+            }
+
             if (!IsPostBack)
             {
-                using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["JPDB"].ConnectionString))
+                LoadModules();
+            }
+        }
+
+        private void LoadModules()
+        {
+            modules.Clear();
+
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["JPDB"].ConnectionString))
+            {
+                string query = @"
+                    SELECT
+                        F.FLASHCARD_ID AS ModuleId,
+                        F.TITLE AS Title,
+                        'Flashcards' AS Type,
+                        F.LEVEL AS Level,
+                        F.STATUS AS Status,
+                        F.DESCRIPTION AS Description,
+                        COUNT(C.CARD_ID) AS CardCount
+                    FROM dbo.FLASHCARDTABLE F
+                    LEFT JOIN dbo.CARDTABLE C
+                        ON C.FLASHCARD_ID = F.FLASHCARD_ID
+                    WHERE F.STATUS <> 'DELETED'
+                    GROUP BY
+                        F.FLASHCARD_ID,
+                        F.TITLE,
+                        F.LEVEL,
+                        F.STATUS,
+                        F.DESCRIPTION
+                    ORDER BY F.TITLE;
+                    ";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
                 {
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
 
-                    string query = @"
-                        SELECT
-                            F.FLASHCARD_ID AS ModuleId,
-                            F.TITLE AS Title,
-                            'Flashcards' AS Type,
-                            F.LEVEL AS Level,
-                            F.STATUS AS Status,
-                            F.DESCRIPTION AS Description,
-                            COUNT(C.CARD_ID) AS CardCount
-                        FROM dbo.FLASHCARDTABLE F
-                        LEFT JOIN dbo.CARDTABLE C
-                            ON C.FLASHCARD_ID = F.FLASHCARD_ID
-                        WHERE F.STATUS <> 'DELETED'
-                        GROUP BY
-                            F.FLASHCARD_ID,
-                            F.TITLE,
-                            F.LEVEL,
-                            F.STATUS,
-                            F.DESCRIPTION
-                        ORDER BY F.TITLE;
-                        ";
+                    da.Fill(dt);
 
-                    using (SqlCommand cmd = new SqlCommand(query, con))
+                    foreach (DataRow row in dt.Rows)
                     {
-                        SqlDataAdapter da = new SqlDataAdapter(cmd);
-                        DataTable dt = new DataTable();
-
-                        da.Fill(dt);
-                        foreach(DataRow row in dt.Rows)
+                        modules.Add(new Module
                         {
-                            if (row["Status"].ToString().Trim() != "DELETED")
-                            {
-                                modules.Add(new Module
-                                {
-                                    Title = row["Title"].ToString().Trim(),
-                                    Type = row["Type"].ToString().Trim(),
-                                    Level = row["Level"].ToString().Trim(),
-                                    Status = row["Status"].ToString().Trim(),
-                                    ModuleId = row["ModuleId"].ToString().Trim(),
-                                });
-                            }
-                        }
-
-                        con.Close();
-
-                        moduleRepeater.DataSource = modules;
-                        moduleRepeater.DataBind();
+                            Title = row["Title"].ToString().Trim(),
+                            Type = row["Type"].ToString().Trim(),
+                            Level = row["Level"].ToString().Trim(),
+                            Status = row["Status"].ToString().Trim(),
+                            ModuleId = row["ModuleId"].ToString().Trim(),
+                        });
                     }
                 }
             }
+
+            moduleRepeater.DataSource = modules;
+            moduleRepeater.DataBind();
         }
-        
+
         protected void DeleteModule_Command(object sender, CommandEventArgs e)
         {
             int moduleId = Convert.ToInt32(e.CommandArgument);
 
-            using(SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["JPDB"].ConnectionString))
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["JPDB"].ConnectionString))
             {
                 string query = "UPDATE FLASHCARDTABLE SET STATUS = 'DELETED' WHERE FLASHCARD_ID = @moduleId";
 
@@ -101,7 +108,7 @@ namespace JapaneseForAll.pages.instructor
 
                     int rowsAffected = cmd.ExecuteNonQuery();
 
-                    if(rowsAffected > 0)
+                    if (rowsAffected > 0)
                     {
                         errMsg.Visible = true;
                         errMsg.ForeColor = System.Drawing.Color.Green;
@@ -109,6 +116,8 @@ namespace JapaneseForAll.pages.instructor
                     }
                 }
             }
+
+            LoadModules();
         }
     }
 }

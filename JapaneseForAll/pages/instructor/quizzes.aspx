@@ -20,7 +20,7 @@
   <main>
     <div class="panel">
       <div class="row sp" style="margin:0">
-        <div><h2>Learning Content Management</h2><p class="mut">Create and manage flashcards, quizzes and audio visual modules</p></div>
+        <div><h2>Quiz Management</h2><p class="mut">Create and manage quizzes</p></div>
         <a class="btn" href="quiz-editor.aspx?type=new">+ Create Quiz</a>
       </div>
       <div class="sc"><table>

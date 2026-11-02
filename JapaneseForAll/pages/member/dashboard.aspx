@@ -51,7 +51,7 @@
                     <asp:Repeater ID="quizRepeater" runat="server">
                         <ItemTemplate>
                             <div class="card">
-                                <span class="mut sm"><h3><%# Eval("QuizTitle") %></h3><a class="lk" href='quiz.aspx?id=<%# Eval("QuizID") %>'>Start lesson →</a></span>
+                                <span class="mut sm"><h3><%# Eval("Title") %></h3><a class="lk" href='quiz.aspx?id=<%# Eval("QuizID") %>'>Start lesson →</a></span>
                             </div>
                         </ItemTemplate>
                     </asp:Repeater>

@@ -18,7 +18,7 @@ namespace JapaneseForAll.pages.member
 
         public class Quiz
         {
-            public string QuizTitle { get; set; }
+            public string Title { get; set; }
             public int QuizID { get; set; }
         }
 
@@ -121,7 +121,9 @@ namespace JapaneseForAll.pages.member
 
                 // Load published quizzes the user has not completed.
                 string quizQuery = @"
-                    SELECT Q.QUIZ_ID, Q.TITLE
+                    SELECT
+                        Q.QUIZ_ID AS QuizID,
+                        Q.TITLE AS Title
                     FROM QUIZTABLE Q
                     WHERE Q.STATUS = 'PUBLISHED'
                       AND NOT EXISTS (
